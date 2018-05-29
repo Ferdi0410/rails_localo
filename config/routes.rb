@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   end
   devise_for :users
   root to: 'pages#home'
+
   namespace :tours do
     resources :arts
   end
