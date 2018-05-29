@@ -25,4 +25,4 @@ t1 = Tour.new(
 t1.save
 
 
-a1 = Attraction.new({title:"Reichstag", description: "Reichstag description" })
+# a1 = Attraction.new({title:"Reichstag", description: "Reichstag description" })
