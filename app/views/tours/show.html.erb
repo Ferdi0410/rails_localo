@@ -1,1 +1,54 @@
 <h1>show page</h1>
+
+
+<p><%= link_to "play tour", play_tour_path(@tour) %></p>
+
+<%= link_to "back", tours_path %>
+
+<ul class="timeline">
+    <li class="timeline-milestone no-flicker is-completed timeline-start">
+      <div class="timeline-action">
+        <h2 class="title">Åpning</h2>
+      </div>
+    </li>
+    <li class="timeline-milestone no-flicker is-current no-dot">
+      <div class="timeline-action is-expandable expanded">
+        <h2 class="title" tabindex="0" aria-controls="timeline-0-milestone-content-0">Konstituering</h2>
+        <div class="content no-flicker" id="timeline-0-milestone-content-0" role="region" aria-expanded="false">
+          <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+          </span>
+        </div>
+      </div>
+    </li>
+    <li class="timeline-milestone no-flicker is-completed timeline-start">
+      <div class="timeline-action">
+        <h2 class="title">Lunsj</h2>
+      </div>
+    </li>
+<li class="timeline-milestone no-flicker is-current">
+      <div class="timeline-action is-expandable expanded">
+        <h2 class="title" tabindex="0" aria-controls="timeline-0-milestone-content-0">Årsberetninger</h2>
+        <div class="content no-flicker" id="timeline-0-milestone-content-0" role="region" aria-expanded="false">
+          <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+          </span>
+        </div>
+      </div>
+    </li>
+    <li class="timeline-milestone no-flicker is-completed timeline-start no-dot">
+      <div class="timeline-action">
+        <h2 class="title">Faglige årsberetninger</h2>
+      </div>
+    </li>
+    <li class="timeline-milestone no-flicker is-completed timeline-start no-dot">
+      <div class="timeline-action">
+        <h2 class="title">Vedtekter</h2>
+      </div>
+    </li>
+    <li class="timeline-milestone no-flicker is-completed timeline-start timeline-last">
+      <div class="timeline-action">
+        <h2 class="title">Beregnet møteslutt</h2>
+      </div>
+    </li>
+  </ul>
+
+<%= javascript_pack_tag 'timeline' %>

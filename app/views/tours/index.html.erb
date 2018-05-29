@@ -1,1 +1,16 @@
 <h1>Index page</h1>
+
+<p style="display:inline"><%= link_to 'Art', tours_path(category: "art") %></p>
+<p style="display:inline"><%= link_to 'History', tours_path(category: "history") %></p>
+<p style="display:inline"><%= link_to 'Architecture', tours_path(category: "architecture") %></p>
+<p style="display:inline"><%= link_to 'urban', tours_path(category: "urban") %></p>
+<p style="display:inline"><%= link_to 'All', tours_path %></p>
+
+<% @tours.each do |tour|  %>
+<p><%= link_to tour.title, tour_path(tour) %></p>
+<ul>
+  <li>category: <%= tour.category %></li>
+</ul>
+<% end %>
+
+<p><%= link_to "back", root_path %></p>
