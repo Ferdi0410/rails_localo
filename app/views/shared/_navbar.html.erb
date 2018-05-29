@@ -1,6 +1,7 @@
 <div class="navbar-wagon <%= current_page?(root_path) ? 'navbar-fixed-top' : ''  %>">
   <!-- Logo -->
 
+
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
@@ -9,15 +10,9 @@
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= cl_image_tag current_user.photo, width: 150, height: 150, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= current_user.email%>
-            <li>
-              <%= link_to pages_profile_path do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
             <li>
               <%= link_to "#" do %>
                 <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>

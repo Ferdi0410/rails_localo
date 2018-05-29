@@ -23,3 +23,6 @@ t1 = Tour.new(
   {title:"tour 2", duration: 60, description:"this is a test tour", category:"urban", city:"Berlin"}
   )
 t1.save
+
+
+a1 = Attraction.new({title:"Reichstag", description: "Reichstag description" })
