@@ -1,3 +1,14 @@
+.big-card{
+border-radius: 10px;
+margin: 5px;
+background-size: cover;
+height: 35vh;
+padding: 45px;
+  .card-description {
+  text-align: center;
+  color: white;
+  }
+}
 
 .card .carousel-cell {
   width: 70vw;
@@ -77,4 +88,11 @@
 .hr {
   border-bottom: 0.5px solid #777;
   margin-bottom: 10px;
+}
+
+@media(min-width: 800px) {
+ .big-card{
+  background-position: center;
+  height: 400px;
+   }
 }
