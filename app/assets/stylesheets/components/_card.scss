@@ -10,6 +10,14 @@ padding: 45px;
   }
 }
 
+.flickity-carousel {
+  overflow: hidden;
+}
+
+.flickity-carousel-container {
+  margin-left: 0px;
+}
+
 .card .carousel-cell {
   width: 70vw;
   position: relative;
