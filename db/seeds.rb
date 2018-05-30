@@ -19,10 +19,27 @@ t1 = Tour.new(
   )
 t1.save
 
-t1 = Tour.new(
+t2 = Tour.new(
   {title:"tour 2", duration: 60, description:"this is a test tour", category:"urban", city:"Berlin"}
   )
-t1.save
+t2.save
 
+t3 = Tour.new(
+  {title:"tour 3", duration: 100, description:"this is a test tour", category:"art", city:"London"}
+  )
+t3.save
+
+t4 = Tour.new(
+  {title:"tour 4", duration: 110, description:"this is a test tour", category:"architecture", city:"Munich"}
+  )
+t4.save
+
+a1 = Attraction.new(
+  {title:"Eiffeltower", address:"Street"}
+  )
+a1.save
+
+t4.attractions << a1
+t4.save
 
 # a1 = Attraction.new({title:"Reichstag", description: "Reichstag description" })
