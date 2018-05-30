@@ -9,6 +9,7 @@
   color: grey;
   font-family: arial;
   text-decoration: none !important;
+  flex: 0 1 150px;
 }
 
 .category-link-active {
@@ -22,4 +23,5 @@
 .category-form {
   padding: 20px;
   display: flex;
+  flex-wrap: wrap;
 }

@@ -1,26 +1,20 @@
 
 <%= render 'shared/searchbar' %>
 <div class="category-form">
-  <p style="display:inline"><%= link_to 'Art', tours_path(category: "art", query: params[:query] ), class: "category-link #{'category-link-active' if params[:category] == 'art'}",  query: params[:query] %>
-  </p>
+  <%= link_to 'Art', tours_path(category: "art", query: params[:query] ), class: "category-link #{'category-link-active' if params[:category] == 'art'}",  query: params[:query] %>
 
-  <p style="display:inline"><%= link_to 'History', tours_path(category: "history", query: params[:query] ), class: "category-link #{'category-link-active' if params[:category] == 'history'}", query: params[:query] %>
-  </p>
+  <%= link_to 'History', tours_path(category: "history", query: params[:query] ), class: "category-link #{'category-link-active' if params[:category] == 'history'}", query: params[:query] %>
 
-  <p style="display:inline"><%= link_to 'Architecture', tours_path(category: "architecture", query: params[:query] ), class: "category-link #{'category-link-active' if params[:category] == 'architecture'}", query: params[:query] %>
-  </p>
+  <%= link_to 'Architecture', tours_path(category: "architecture", query: params[:query] ), class: "category-link #{'category-link-active' if params[:category] == 'architecture'}", query: params[:query] %>
 
-  <p style="display:inline"><%= link_to 'Urban', tours_path(category: "urban", query: params[:query] ), class: "category-link #{'category-link-active' if params[:category] == 'urban'}",  query: params[:query] %>
-  </p>
+  <%= link_to 'Urban', tours_path(category: "urban", query: params[:query] ), class: "category-link #{'category-link-active' if params[:category] == 'urban'}",  query: params[:query] %>
 </div>
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">
     <div id="tours">
       <% @tours.each do |tour| %>
-        <h4><%= tour.title %></h4>
-        <p><%= tour.city %></p>
+      <%= render 'pages/bigcard' %>
       <% end %>
-
     </div>
   </div>
 </div>
