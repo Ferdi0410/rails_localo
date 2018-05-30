@@ -5,68 +5,26 @@
 
 <%= link_to "back", tours_path %>
 
+<% tour_time = 0 %>
 <ul class="timeline">
-  <% @tour.attractions.each_with_index do |attraction, index| %>
+  <% @tour.tour_attractions.each_with_index do |tour_attraction, index| %>
   <% if index == @tour.attractions.count - 1 %>
-    <li class="timeline-milestone no-flicker is-completed completed is-current timeline-last">
+    <li class="timeline-milestone no-flicker <%= current_user.steps.find_by(tour_attraction_id: tour_attraction.id).completed ? "is-completed" : "is-not-completed" %> timeline-last" data-after="<%= tour_time %> min">
   <% else %>
-    <li class="timeline-milestone no-flicker is-completed is-current">
+    <li class="timeline-milestone no-flicker <%= current_user.steps.find_by(tour_attraction_id: tour_attraction.id).completed ? "is-completed" : "is-not-completed" %> " data-after="<%= tour_time %> min">
   <% end %>
     <div class="timeline-action is-expandable expanded">
-      <h2 class="title" tabindex="0" aria-controls="timeline-0-milestone-content-0"><%= attraction.title %></h2>
+      <h2 class="title" tabindex="0" aria-controls="timeline-0-milestone-content-0"><%= tour_attraction.attraction.title %></h2>
       <div class="content no-flicker" id="timeline-0-milestone-content-0" role="region" aria-expanded="false">
-        <span><%= attraction.description %>
+        <span><%= tour_attraction.attraction.description %>
         </span>
+        <p><%= current_user.steps.find_by(tour_attraction_id: tour_attraction.id).completed ? "completed" : "not completed" %></p>
       </div>
     </div>
   </li>
+
+  <% tour_time += tour_attraction.attraction.duration %>
   <% end %>
 </ul>
 
 <%= javascript_pack_tag 'timeline' %>
-
-<!-- ul class="timeline">
-    <li class="timeline-milestone no-flicker is-completed timeline-start">
-      <div class="timeline-action">
-        <h2 class="title">Åpning</h2>
-      </div>
-    </li>
-    <li class="timeline-milestone no-flicker is-current no-dot">
-      <div class="timeline-action is-expandable expanded">
-        <h2 class="title" tabindex="0" aria-controls="timeline-0-milestone-content-0">Konstituering</h2>
-        <div class="content no-flicker" id="timeline-0-milestone-content-0" role="region" aria-expanded="false">
-          <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-          </span>
-        </div>
-      </div>
-    </li>
-    <li class="timeline-milestone no-flicker is-completed timeline-start">
-      <div class="timeline-action">
-        <h2 class="title">Lunsj</h2>
-      </div>
-    </li>
-<li class="timeline-milestone no-flicker is-current">
-      <div class="timeline-action is-expandable expanded">
-        <h2 class="title" tabindex="0" aria-controls="timeline-0-milestone-content-0">Årsberetninger</h2>
-        <div class="content no-flicker" id="timeline-0-milestone-content-0" role="region" aria-expanded="false">
-          <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-          </span>
-        </div>
-      </div>
-    </li>
-    <li class="timeline-milestone no-flicker is-completed timeline-start no-dot">
-      <div class="timeline-action">
-        <h2 class="title">Faglige årsberetninger</h2>
-      </div>
-    </li>
-    <li class="timeline-milestone no-flicker is-completed timeline-start no-dot">
-      <div class="timeline-action">
-        <h2 class="title">Vedtekter</h2>
-      </div>
-    </li>
-    <li class="timeline-milestone no-flicker is-completed timeline-start timeline-last">
-      <div class="timeline-action">
-        <h2 class="title">Beregnet møteslutt</h2>
-      </div>
-    </li>
-  </ul> -->
