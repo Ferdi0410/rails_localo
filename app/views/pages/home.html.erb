@@ -1,4 +1,6 @@
+<div class="container">
 <h1>Home Page</h1>
+  <div class="row">
 <div id="homePageCarousel" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="item active">
@@ -20,13 +22,15 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+</div>
 
+<div class="flickity-carousel-container">
+  <hr>
+    <p>Popular Cities</p>
+      <%= render 'shared/cardswap' %>
+    <p><%= link_to "click me to go to show page", tour_path(@tours[0]) %></p>
+    <p><%= link_to "click me to go to index page", tours_path %></p>
+</div>
+</div>
 
-<hr>
-<p>Popular Cities</p>
-<%= render 'shared/cardswap' %>
-<p><%= link_to "click me to go to show page", tour_path(@tours[0]) %></p>
-<p><%= link_to "click me to go to index page", tours_path %></p>
-
-<a href="#" class="btn-localo">Sign Up</a>
-
+</div>
