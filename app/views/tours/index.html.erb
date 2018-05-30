@@ -1,16 +1,18 @@
-<h1>Index page</h1>
-
-<p style="display:inline"><%= link_to 'Art', tours_path(category: "art") %></p>
-<p style="display:inline"><%= link_to 'History', tours_path(category: "history") %></p>
-<p style="display:inline"><%= link_to 'Architecture', tours_path(category: "architecture") %></p>
-<p style="display:inline"><%= link_to 'urban', tours_path(category: "urban") %></p>
-<p style="display:inline"><%= link_to 'All', tours_path %></p>
-
+<p style="display:inline"><%= link_to 'Art', tours_path(category: "art"), class: "category-link #{'category-link-active' if params[:category] == 'art', query: params[:query]}" %></p>
+<p style="display:inline"><%= link_to 'History', tours_path(category: "history"), class: "category-link #{'category-link-active' if params[:category] == 'history', query: params[:query]} " %></p>
+<p style="display:inline"><%= link_to 'Architecture', tours_path(category: "architecture"), class: "category-link #{'category-link-active' if params[:category] == 'architecture', query: params[:query]}" %></p>
+<p style="display:inline"><%= link_to 'urban', tours_path(category: "urban"), class: "category-link #{'category-link-active' if params[:category] == 'urban', query: params[:query]}" %></p>
+<p style="display:inline"><%= link_to 'All', tours_path class: "category-link #{'category-link-active' if params[:category] == 'urban', query: params[:query]}" %></p>
 <% @tours.each do |tour|  %>
-<p><%= link_to tour.title, tour_path(tour) %></p>
-<ul>
-  <li>category: <%= tour.category %></li>
-</ul>
-<% end %>
-
-<p><%= link_to "back", root_path %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div id="tours">
+        <% @tours.each do |tour| %>
+          <h4><%= tour.title %></h4>
+          <p><%= tour.city %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
