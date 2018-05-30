@@ -90,7 +90,7 @@
   background-color: #ce2323;
 }
 
-.timeline-milestone.is-completed:before.completed, .timeline-milestone.is-current:before {
+.timeline-milestone.is-completed:before,.timeline-milestone.is-current:before {
   background-color: #40bc6f;
 }
 

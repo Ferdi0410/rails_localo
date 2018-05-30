@@ -8,7 +8,7 @@
 <ul class="timeline">
   <% @tour.attractions.each_with_index do |attraction, index| %>
   <% if index == @tour.attractions.count - 1 %>
-    <li class="timeline-milestone no-flicker is-completed completed is-current timeline-last">
+    <li class="timeline-milestone no-flicker is-completed green is-current timeline-last">
   <% else %>
     <li class="timeline-milestone no-flicker is-completed is-current">
   <% end %>
@@ -17,6 +17,8 @@
       <div class="content no-flicker" id="timeline-0-milestone-content-0" role="region" aria-expanded="false">
         <span><%= attraction.description %>
         </span>
+        <p><%= attraction.steps[0].completed %></p>
+        <p><%= current_user %></p>
       </div>
     </div>
   </li>
