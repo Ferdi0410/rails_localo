@@ -1,18 +1,29 @@
-<p style="display:inline"><%= link_to 'Art', tours_path(category: "art"), class: "category-link #{'category-link-active' if params[:category] == 'art', query: params[:query]}" %></p>
-<p style="display:inline"><%= link_to 'History', tours_path(category: "history"), class: "category-link #{'category-link-active' if params[:category] == 'history', query: params[:query]} " %></p>
-<p style="display:inline"><%= link_to 'Architecture', tours_path(category: "architecture"), class: "category-link #{'category-link-active' if params[:category] == 'architecture', query: params[:query]}" %></p>
-<p style="display:inline"><%= link_to 'urban', tours_path(category: "urban"), class: "category-link #{'category-link-active' if params[:category] == 'urban', query: params[:query]}" %></p>
-<p style="display:inline"><%= link_to 'All', tours_path, class: "category-link #{'category-link-active' if params[:category] == 'urban', query: params[:query]}" %></p>
-<% @tours.each do |tour|  %>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
-      <div id="tours">
-        <% @tours.each do |tour| %>
-          <h4><%= tour.title %></h4>
-          <p><%= tour.city %></p>
-        <% end %>
-      </div>
+
+<%= render 'shared/searchbar' %>
+<div class="category-form">
+  <p style="display:inline"><%= link_to 'Art', tours_path(category: "art", query: params[:query] ), class: "category-link #{'category-link-active' if params[:category] == 'art'}",  query: params[:query] %>
+  </p>
+
+  <p style="display:inline"><%= link_to 'History', tours_path(category: "history", query: params[:query] ), class: "category-link #{'category-link-active' if params[:category] == 'history'}", query: params[:query] %>
+  </p>
+
+  <p style="display:inline"><%= link_to 'Architecture', tours_path(category: "architecture", query: params[:query] ), class: "category-link #{'category-link-active' if params[:category] == 'architecture'}", query: params[:query] %>
+  </p>
+
+  <p style="display:inline"><%= link_to 'Urban', tours_path(category: "urban", query: params[:query] ), class: "category-link #{'category-link-active' if params[:category] == 'urban'}",  query: params[:query] %>
+  </p>
+</div>
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div id="tours">
+      <% @tours.each do |tour| %>
+        <h4><%= tour.title %></h4>
+        <p><%= tour.city %></p>
+      <% end %>
+
     </div>
   </div>
 </div>
+
+
+<!-- class: "category-link #{'category-link-active' if params[:category] == 'art', -->
