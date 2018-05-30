@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_29_091134) do
+ActiveRecord::Schema.define(version: 2018_05_30_092907) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(version: 2018_05_29_091134) do
     t.float "latitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
+    t.integer "duration"
+  end
+
+  create_table "steps", force: :cascade do |t|
+    t.bigint "user_tour_id"
+    t.bigint "tour_attraction_id"
+    t.boolean "completed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tour_attraction_id"], name: "index_steps_on_tour_attraction_id"
+    t.index ["user_tour_id"], name: "index_steps_on_user_tour_id"
   end
 
   create_table "tour_attractions", force: :cascade do |t|
@@ -76,6 +88,8 @@ ActiveRecord::Schema.define(version: 2018_05_29_091134) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "steps", "tour_attractions"
+  add_foreign_key "steps", "user_tours"
   add_foreign_key "tour_attractions", "attractions"
   add_foreign_key "tour_attractions", "tours"
   add_foreign_key "user_tours", "tours"

@@ -43,7 +43,7 @@
 }
 
 .timeline-milestone {
-    border-left: 4px solid #3c3c3b;
+    border-left: 4px solid #cacece;
     margin: 0 0 0 20px;
     padding: 0 0 5px 40px;
     position: relative;
@@ -75,7 +75,7 @@
 }
 
 .timeline-milestone:after {
-    content: "10.00";
+    content: "10";
     position: absolute;
     left: -60px;
     top: -3px;
@@ -87,7 +87,11 @@
 }
 
 .timeline-milestone.is-completed:before, .timeline-milestone.is-current:before {
-  background-color: #3c3c3b;
+  background-color: #ce2323;
+}
+
+.timeline-milestone.is-completed:before.completed, .timeline-milestone.is-current:before {
+  background-color: #40bc6f;
 }
 
 .timeline-action {

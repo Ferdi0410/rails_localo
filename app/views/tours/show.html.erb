@@ -1,11 +1,31 @@
-<h1>show page</h1>
+<h1><%= @tour.title %></h1>
 
 
-<p><%= link_to "play tour", play_tour_path(@tour) %></p>
+<p style="display:inline"><%= link_to "play tour", play_tour_path(@tour) %></p>
 
 <%= link_to "back", tours_path %>
 
 <ul class="timeline">
+  <% @tour.attractions.each_with_index do |attraction, index| %>
+  <% if index == @tour.attractions.count - 1 %>
+    <li class="timeline-milestone no-flicker is-completed completed is-current timeline-last">
+  <% else %>
+    <li class="timeline-milestone no-flicker is-completed is-current">
+  <% end %>
+    <div class="timeline-action is-expandable expanded">
+      <h2 class="title" tabindex="0" aria-controls="timeline-0-milestone-content-0"><%= attraction.title %></h2>
+      <div class="content no-flicker" id="timeline-0-milestone-content-0" role="region" aria-expanded="false">
+        <span><%= attraction.description %>
+        </span>
+      </div>
+    </div>
+  </li>
+  <% end %>
+</ul>
+
+<%= javascript_pack_tag 'timeline' %>
+
+<!-- ul class="timeline">
     <li class="timeline-milestone no-flicker is-completed timeline-start">
       <div class="timeline-action">
         <h2 class="title">Åpning</h2>
@@ -49,6 +69,4 @@
         <h2 class="title">Beregnet møteslutt</h2>
       </div>
     </li>
-  </ul>
-
-<%= javascript_pack_tag 'timeline' %>
+  </ul> -->
