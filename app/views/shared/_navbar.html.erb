@@ -1,74 +1,31 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <a href="/" class="navbar-wagon-brand">
-    <img src="images/logo.png" alt="logo">
+    <%= image_tag("Logo_Localo.png", class: "navbar-logo") %>
   </a>
-
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <a href="" class="btn-localo">Log In</a>
-    <a href="" class="btn-localo">Sign Up</a>
-    <!-- Profile picture with dropdown list -->
-    <div class="navbar-wagon-item">
-      <div class="dropdown">
-        <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+  <% if user_signed_in? %>
+  <div class="navbar-wagon-item">
+    <div class="dropdown">
+      <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu"data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Log Out</a></li>
+          <li>
+            <a href="#">Profile</a>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+            <% end %>
+          </li>
         </ul>
-      </div>
     </div>
   </div>
-  <!-- Logo -->
-  <a href="/" class="navbar-wagon-brand">
-   <%= image_tag("Logo_Localo.png", class: "navbar-logo") %>
-  </a>
-  <div class="navbar-wagon <%= current_page?(root_path) ? 'navbar-fixed-top' : ''  %>">
-  <!-- Logo -->
-
-    <div class="navbar-wagon-right hidden-xs hidden-sm">
-      <a href="#" class="btn-localo">Log In</a>
-      <a href="#" class="btn-localo">Sign Up</a>
-
-      <!-- Profile picture with dropdown list -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Log Out</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-      <% if user_signed_in? %>
-        <%= link_to "Sign Out", destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: "delete" %>
-        <!-- Avatar with dropdown menu -->
-        <div class="navbar-wagon-item">
-          <div class="dropdown">
-            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-              <li>
-                <%= current_user.email%>
-              <li>
-                <%= link_to "#" do %>
-                  <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to destroy_user_session_path, method: :delete do %>
-                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-                <% end %>
-              </li>
-            </ul>
-          </div>
-        </div>
-      <% else %>
-        <!-- Login link (when logged out) -->
-        <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-        <%= link_to t(".sign_in", default: "Sign up"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <% end %>
-    </div>
+  <% else %>
+  <div class="navbar-wagon-right">
+    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link btn-localo" %>
+    <%= link_to t(".sign_in", default: "Sign up"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link btn-localo" %>
+  </div>
+  <% end %>
 </div>
+
+
 
