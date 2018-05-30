@@ -1,3 +1,4 @@
+
 <%= render 'shared/searchbar' %>
 <div class="category-form">
   <p style="display:inline"><%= link_to 'Art', tours_path(category: "art", query: params[:query] ), class: "category-link #{'category-link-active' if params[:category] == 'art'}",  query: params[:query] %>
@@ -19,6 +20,7 @@
         <h4><%= tour.title %></h4>
         <p><%= tour.city %></p>
       <% end %>
+
     </div>
   </div>
 </div>

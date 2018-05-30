@@ -75,7 +75,7 @@
 }
 
 .timeline-milestone:after {
-    content: "10";
+    content: attr(data-after);
     position: absolute;
     left: -60px;
     top: -3px;
@@ -87,12 +87,14 @@
 }
 
 .timeline-milestone.is-completed:before, .timeline-milestone.is-current:before {
-  background-color: #ce2323;
+  background-color: green;
 }
 
-.timeline-milestone.is-completed:before.completed, .timeline-milestone.is-current:before {
-  background-color: #40bc6f;
+.timeline-milestone.is-not-completed:before {
+  background-color: red;
 }
+
+
 
 .timeline-action {
   padding: 16px 0px;
