@@ -19,10 +19,11 @@ u1.save
 url1 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527759029/nyqximtd6eg3zmxbjvpw.jpg"
 url2 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527759513/uyrd7shauafcbap7emb5.jpg"
 url3 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527760064/ii1rjcpestiawdrkkw4b.jpg"
+url4 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527769344/axqjm7jleic7uevapme4.jpg"
 t1 = Tour.new(
   {title:"The story of the legendary Checkpoint Charlie", duration: 60, description:"this is a test tour", category:"art", city:"Berlin"}
   )
-
+t1.remote_photo_url = url1
 t1.save
 
 t2 = Tour.new(
@@ -32,7 +33,7 @@ t2.remote_photo_url = url2
 t2.save
 
 t3 = Tour.new(
-  {title:"tour 3", duration: 100, description:"this is a test tour", category:"art", city:"London"}
+  {title:"Berlin Club Tour", duration: 100, description:"this is a test tour", category:"art", city:"London"}
   )
 t3.remote_photo_url = url3
 t3.save
@@ -40,6 +41,7 @@ t3.save
 t4 = Tour.new(
   {title:"tour 4", duration: 110, description:"this is a test tour", category:"architecture", city:"Munich"}
   )
+t4.remote_photo_url = url4
 t4.save
 
 a1 = Attraction.new(
