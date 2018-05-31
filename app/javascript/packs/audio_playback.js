@@ -7,7 +7,31 @@
 
 function fetchCurrentLocation() {
   // return a object with lat and lng
+  let userLocation = {
+    lat: 0,
+    lng: 0
+  }
+  var options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+  };
+
+  function success(pos) {
+    var crd = pos.coords;
+    userLocation.lat = crd.latitude;
+    userLocation.lng = crd.longitude;
+  }
+
+  function error(err) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+  }
+
+  navigator.geolocation.getCurrentPosition(success, error, options);
+
+  return userLocation;
 }
+
 
 function getAttractionsCoordinates() {
 
