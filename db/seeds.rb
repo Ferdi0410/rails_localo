@@ -22,7 +22,7 @@ url3 =
 t1 = Tour.new(
   {title:"tour 1", duration: 60, description:"this is a test tour", category:"art", city:"Berlin"}
   )
-t1.remote_photo_url = url1
+
 t1.save
 
 t2 = Tour.new(

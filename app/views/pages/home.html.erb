@@ -6,14 +6,13 @@
 <div id="homePageCarousel" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="item active">
-      <%= render 'bigcard' %>
+      <%= render 'bannercard' %>
     </div>
-    <div class="item">
-      <%= render 'bigcard' %>
-    </div>
-    <div class="item">
-      <%= render 'bigcard' %>
-    </div>
+    <% @tours.each do |tour| %>
+      <div class="item">
+        <%= render 'pages/homecard', tour:tour %>
+      </div>
+    <% end %>
   </div>
   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
     <span class="icon-prev" aria-hidden="true"></span>
