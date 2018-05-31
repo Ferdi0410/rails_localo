@@ -13,9 +13,9 @@
   <ul class="timeline">
     <% @tour.tour_attractions.each_with_index do |tour_attraction, index| %>
     <% if index == @tour.attractions.count - 1 %>
-      <li class="timeline-milestone no-flicker <%= current_user.steps.find_by(tour_attraction_id: tour_attraction.id).completed  %> timeline-last" data-after="<%= tour_time %> min">
+      <li class="timeline-milestone no-flicker <%= current_user.steps.find_by(tour_attraction_id: tour_attraction.id).completed  %> timeline-last" data-after="<%= tour_time %> min" data-coordinates="<%= tour_attraction.coordinates.to_json %>">
     <% else %>
-      <li class="timeline-milestone no-flicker <%= current_user.steps.find_by(tour_attraction_id: tour_attraction.id).completed  %> " data-after="<%= tour_time %> min">
+      <li class="timeline-milestone no-flicker <%= current_user.steps.find_by(tour_attraction_id: tour_attraction.id).completed  %> " data-after="<%= tour_time %> min" data-coordinates="<%= tour_attraction.coordinates.to_json %>">
     <% end %>
       <div class="timeline-action is-expandable expanded">
         <h2 class="title" tabindex="0" aria-controls="timeline-0-milestone-content-0"><%= tour_attraction.attraction.title %></h2>
