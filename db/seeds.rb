@@ -22,7 +22,7 @@ url3 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527760064/ii1rjcpesti
 t1 = Tour.new(
   {title:"The story of the legendary Checkpoint Charlie", duration: 60, description:"this is a test tour", category:"art", city:"Berlin"}
   )
-t1.remote_photo_url = url1
+
 t1.save
 
 t2 = Tour.new(

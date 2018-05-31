@@ -12,12 +12,12 @@
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">
     <div id="tours">
-      <% @tours.each do |tour| %>
-      <%= render 'pages/bigcard' %>
+      <% @tours.each do |tour|  %>
+        <%= render 'pages/bigcard', tour: tour %>
       <% end %>
     </div>
   </div>
 </div>
 
 
-<!-- class: "category-link #{'category-link-active' if params[:category] == 'art', -->
+
