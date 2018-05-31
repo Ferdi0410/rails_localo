@@ -10,10 +10,11 @@ class ToursController < ApplicationController
     OR tours.city ILIKE :query \
     OR attractions.title ILIKE :query \
     "
-    @tours = Tour.joins("LEFT JOIN tour_attractions ON tour_attractions.tour_id = tours.id  LEFT JOIN attractions ON tour_attractions.attraction_id = attractions.id").all
+    @tours = Tour.joins("LEFT JOIN tour_attractions ON tour_attractions.tour_id = tours.id  LEFT JOIN attractions ON tour_attractions.attraction_id = attractions.id").group(:id)
     @tours = @tours.where(sql_query, query: "%#{params[:query]}%") if params[:query].present?
 
-    @tours = @tours.where(category: params[:category]).uniq if params[:category].present?
+    @tours = @tours.where(category: params[:category]) if params[:category].present?
+
       # @tours = Tour.joins(:tour_attractions, :attractions).where(sql_query, query: "%#{params[:query]}%")
     # else
       # @tours = Tour.all
