@@ -1,10 +1,12 @@
 <div class="bigcardindex">
+  <div class="col-xs-12">
+    <div class="border-index"></div>
    <div class="titel-index">
-      <%= link_to tour.title, tour_path(tour) %>
-    </div>
-<div class="col-xs-12">
-  <div class="big-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path tour.photo, crop: :fill %>');">
-
+    <%= link_to tour.title, tour_path(tour) %>
+   </div>
+  <div class="big-card-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path tour.photo, crop: :fill %>');">
+</div>
+  <%= link_to tour.description, tour_path(tour) %>
 </div>
 </div>
 
