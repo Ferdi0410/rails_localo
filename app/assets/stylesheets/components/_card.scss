@@ -1,3 +1,7 @@
+.card-link {
+  text-decoration: none !important;
+}
+
 .big-card{
  border-radius: 10px;
  background-size: cover;
@@ -5,12 +9,12 @@
  padding: 45px;
  width: 55vh;
  margin-top: 5px;
-  .card-description {
-  text-align: center;
+ .card-description {
+    text-align: center;
+    color: white;
+    font-size: 40px;
   }
-  .card-link {
-  color: white;
-  }
+
 }
 
 .col-xs-12 {
