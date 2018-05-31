@@ -1,4 +1,5 @@
 class ToursController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     # @tours = Tour.where(city: @city)
     # @tours = Tour.all
@@ -22,6 +23,13 @@ class ToursController < ApplicationController
 
   def show
     @tour = Tour.find(params[:id])
+  end
+
+  def start_tour
+    @tour = Tour.find(params[:id])
+    current_user.tours << @tour
+    current_user.user_tours.last.update(status:"incomplete")
+    redirect_to play_tour_path(@tour)
   end
 
   def play

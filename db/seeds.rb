@@ -43,7 +43,7 @@ t4 = Tour.new(
 t4.save
 
 a1 = Attraction.new(
-  {title:"Eiffeltower", address:"Street"}
+  {title:"Eiffeltower", address:"Street", duration: 10}
   )
 a1.save
 
