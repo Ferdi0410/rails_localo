@@ -1,21 +1,30 @@
 .btn-localo {
- color: #00818a;
- border: 1px solid #00818a;
- padding: 10px 15px;
- border-radius: 50px;
- font-weight: lighter;
- opacity: 0.6;
- margin: 5px;
+    background-color: #1c6f81;
+    border: 1px solid #1c6f81;
+    padding: 6px 25px;
+    border-radius: 50px;
+    font-weight: lighter;
+    margin: 5px;
+    height: 30px;
+    width: 80px;
 }
 .btn-localo:hover {
   opacity: 1;
   text-decoration: none;
-  color: #00818a;
-  border: 1px solid #00818a;
-  padding: 10px 15px;
+  background-color: white;
+  border: 1px solid #1c6f81;
+  padding: 6px 25px;
   border-radius: 50px;
   font-weight: lighter;
   opacity: 0.6;
   margin: 5px;
 }
 
+.navbar-wagon-link {
+  font-size: 10px;
+  color: white;
+}
+.navbar-wagon-link:hover {
+  font-size: 10px;
+  color: #1c6f81;
+}
