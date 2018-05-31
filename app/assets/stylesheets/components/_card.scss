@@ -50,6 +50,7 @@
   background-image: url(berlin.jpg);
   background-size: cover;
   border-radius: 5px;
+  margin-left: 4px;
 
 }
 .card .card-info {
@@ -119,7 +120,11 @@
 }
 
 .sublines p {
+  margin-left: 10px;
   margin-top: 20px;
-  font-family: Source Sans Pro;
-  font-family: bold;
+  font-family: Brandon, Helvetica, sans-serif;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #5f5b5b
+
 }
