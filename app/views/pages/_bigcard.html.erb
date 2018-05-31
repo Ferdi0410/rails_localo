@@ -1,9 +1,12 @@
+<div class="index-box">
 <div class="col-xs-12">
+  <%= link_to tour_path(tour), class: "card-link" do %>
   <div class="big-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path tour.photo, crop: :fill %>');">
-    <div class="card-description">
-      <h2><%= link_to tour.title, tour_path(tour) %></h2>
+  <div class="card-description">
+       <%= tour.title %>
     </div>
   </div>
+  <%end %>
 </div>
-
+</div>
 
