@@ -86,14 +86,17 @@
   content: ""
 }
 
-.timeline-milestone.is-completed:before, .timeline-milestone.is-current:before {
+.timeline-milestone.incomplete:before, .timeline-milestone.is-current:before {
+  background-color: #cacece;
+}
+
+.timeline-milestone.completed:before {
   background-color: green;
 }
 
-.timeline-milestone.is-not-completed:before {
-  background-color: red;
+.timeline-milestone.in-progress:before {
+  background-color: orange;
 }
-
 
 
 .timeline-action {

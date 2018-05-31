@@ -45,7 +45,7 @@ t4.remote_photo_url = url4
 t4.save
 
 a1 = Attraction.new(
-  {title:"Eiffeltower", address:"Street"}
+  {title:"Eiffeltower", address:"Street", duration: 10}
   )
 a1.save
 

@@ -1,8 +1,7 @@
 class UserTour < ApplicationRecord
   belongs_to :user
   belongs_to :tour
-  validates :user, uniqueness: { scope: :tour }
-  has_many :steps
+  has_many :steps, dependent: :destroy
   has_many :tour_attracions, through: :steps
 
   after_create :create_steps
@@ -11,7 +10,7 @@ class UserTour < ApplicationRecord
 
   def create_steps
     tour.tour_attractions.each do |tour_attract|
-      Step.create(user_tour: self, tour_attraction: tour_attract, completed: false)
+      Step.create(user_tour: self, tour_attraction: tour_attract, completed: "incomplete")
     end
   end
 end
