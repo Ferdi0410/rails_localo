@@ -21,29 +21,38 @@ url1 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527759029/nyqximtd6eg
 url2 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527759513/uyrd7shauafcbap7emb5.jpg"
 url3 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527760064/ii1rjcpestiawdrkkw4b.jpg"
 url4 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527769344/axqjm7jleic7uevapme4.jpg"
+url5 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527862571/2405727112_4dbb70954a_b.jpg"
+url6 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527862790/shoreditch-london-guide.jpg"
 t1 = Tour.new(
-  {title:"The story of Checkpoint Charlie", duration: 60, description:"A Cold War spy shares his story of the fascinating and terrifying battle of ideologies that once divided the world", category:"art", city:"Berlin"}
+  {title:"The story of Checkpoint Charlie", duration: 60, description:"A Cold War spy shares his story of the fascinating and terrifying battle of ideologies that once divided the world", category:"history", city:"Berlin"}
   )
 t1.remote_photo_url = url1
 t1.save
 
 t2 = Tour.new(
-  {title:"Historic Wall Tour", duration: 60, description:"Discover the story behind the Berlin Wall and the influence on the people", category:"urban", city:"Berlin"}
+  {title:"Historic Wall Tour", duration: 60, description:"Discover the story behind the Berlin Wall and the influence on the people", category:"history", city:"Berlin"}
   )
 t2.remote_photo_url = url2
 t2.save
 
 t3 = Tour.new(
-  {title:"Berlin Club Tour", duration: 100, description:"Wanna see Berghain, Watergate or Club der Visionäre. A Berlin club veteran shares his experiences in his 30 years of Berlin nightlife. Jump in the World of Drugs, Electro and Sex", category:"art", city:"Berlin"}
+  {title:"Berlin Club Tour", duration: 100, description:"Wanna see Berghain, Watergate or Club der Visionäre. A Berlin club veteran shares his experiences in his 30 years of Berlin nightlife. Jump in the World of Drugs, Electro and Sex", category:"urban", city:"Berlin"}
   )
 t3.remote_photo_url = url3
 t3.save
 
 t4 = Tour.new(
-  {title:"Viktualienmarkt Tour", duration: 110, description:"Discover one of the most famous food markets in the world. With little stores and wine tasting you feel like a real Münchner Kindl", category:"architecture", city:"Munich"}
+  {title:"Kollwitzer Kiez", duration: 110, description:"Discover one of the most iconic neighboorhoods in the Berlin.", category:"urban", city:"Berlin"}
   )
 t4.remote_photo_url = url4
 t4.save
+
+t5 = Tour.new(
+  {title:"Viktualienmarkt", duration: 110, description:"Discover one of the most famous food markets in the world.", category:"urban", city:"Munich"}
+  )
+t5.remote_photo_url = url5
+t5.save
+
 
 
 
@@ -54,12 +63,12 @@ a2 = Attraction.new({title:"Brandenburg gate", address: "Pariser Platz, 10117 Be
 a2.save
 
 a3 = Attraction.new({title:"Checkpoint charlie", address: "Friedrichstraße 43-45, 10117 Berlin", description: "Checkpoint Charlie description", duration: 35})
-t5 = Tour.new(
+t6 = Tour.new(
   {title:"Shoreditch", duration: 120, description:"Dive in the most urban part of London. Crab a beer and discover the Home District of James - an Institution in Shoreditch", category:"urban", city:"London"}
   )
 
-t5.remote_photo_url = url4
-t5.save
+t6.remote_photo_url = url6
+t6.save
 
 a1 = Attraction.new(
   {title:"Eiffeltower", address:"Street", duration: 10}

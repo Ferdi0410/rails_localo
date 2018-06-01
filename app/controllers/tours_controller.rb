@@ -37,7 +37,6 @@ class ToursController < ApplicationController
     @tour = Tour.find(params[:id])
     @attraction = Attraction.near([params[:latitude], params[:longitude]], 1, order: "distance").first
     # @attraction = Attraction.for_lat_lng(params[:latitude], params[:longitude])
-
     respond_to do |format|
       format.html
       format.js # views/tours/play.js.erb
