@@ -2,13 +2,8 @@
 
 <%= link_to "back", tour_path(@tour) %>
 <div class="audio-file">
-navigator.geolocation.getCurrentPosition(
-   const function success(position) {
-     let latitude =  position.coords.latitude;
-     let longitude = position.coords.longitude;
-   }
-  );
-<%= audio_tag(cloudinary_url("pISg0HkQq9Dz.128.mp3", :resource_type=>"video"), controls: true) %>
+<%= audio_tag('', controls: true) %>
+<%= audio_tag('', controls: true, class: "audio-test") %>
 </div>
 
 

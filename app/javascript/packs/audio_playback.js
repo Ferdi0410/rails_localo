@@ -1,3 +1,6 @@
+let latitude;
+let longitude;
+
 // a method that return the current location
 // a method that get all the attraction locations
 // a method that compares current location with the attraction location (with radius proximity)
@@ -7,20 +10,30 @@
 
 function fetchCurrentLocation() {
   // return a object with lat and lng
+  // check if geolocation is supported/enabled on current browser
+  if ("geolocation" in navigator) {
+    navigator.geolocation.getCurrentPosition(
+     function success(position) {
+       // for when getting location is a success
+       latitude = position.coords.latitude;
+       longitude = position.coords.longitude;
+
+       $.ajax({
+        url: window.location.pathname + '.js?latitude=' + latitude + '&longitude=' + longitude,
+        method: 'get',
+       })
+     },
+    function error(error_message) {
+      console.error('An error has occured while retrieving location', error_message)
+    }
+  );
+  } else {
+    console.log('geolocation is not enabled on this browser')
+  }
 }
 
-function getAttractionsCoordinates() {
-
-  // should return an array of JS object with lat and lng
-}
-
-function runCoordinatesAudioChecking() {
-  const currentLocation = fetchCurrentLocation()
+document.addEventListener('DOMContentLoaded', fetchCurrentLocation);
 
 
-  //....
-}
-
-runCoordinatesAudioChecking()
 
 

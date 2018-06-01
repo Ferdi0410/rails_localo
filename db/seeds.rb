@@ -15,7 +15,7 @@ u1 = User.new(
   )
 
 u1.save
-
+#tour images
 url1 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527759029/nyqximtd6eg3zmxbjvpw.jpg"
 url2 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527759513/uyrd7shauafcbap7emb5.jpg"
 url3 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527760064/ii1rjcpestiawdrkkw4b.jpg"
@@ -44,21 +44,14 @@ t4 = Tour.new(
 t4.remote_photo_url = url4
 t4.save
 
-a1 = Attraction.new(
-  {title:"Eiffeltower", address:"Street", duration: 10}
-  )
+
+a1 = Attraction.new({title:"Reichstag", address: "Platz der Republik 1, 11011 Berlin", description: "Reichstag description", duration: 20 })
 a1.save
 
-t4.attractions << a1
-t4.save
-
-a1 = Attraction.new({title:"Reichstag", description: "Reichstag description", duration: 20 })
-a1.save
-
-a2 = Attraction.new({title:"Brandenburg gate", description: "Brandenburg gate description", duration: 15})
+a2 = Attraction.new({title:"Brandenburg gate", address: "Pariser Platz, 10117 Berlin",description: "Brandenburg gate description", duration: 15})
 a2.save
 
-a3 = Attraction.new({title:"Checkpoint charlie", description: "Checkpoint Charlie description", duration: 35})
+a3 = Attraction.new({title:"Checkpoint charlie", address: "Friedrichstraße 43-45, 10117 Berlin", description: "Checkpoint Charlie description", duration: 35})
 a3.save
 
 t1.attractions << a1
