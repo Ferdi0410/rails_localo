@@ -35,13 +35,22 @@ class ToursController < ApplicationController
 
   def play
     @tour = Tour.find(params[:id])
-    @attractions = Attraction.near([params[:latitude], params[:longitude]], 1, order: "distance").first
+    @attraction = Attraction.near([params[:latitude], params[:longitude]], 1, order: "distance").first
     # @attraction = Attraction.for_lat_lng(params[:latitude], params[:longitude])
 
     respond_to do |format|
       format.html
       format.js # views/tours/play.js.erb
     end
+
+    @markers = @tour.attractions.map do |attraction|
+      next if attraction.latitude.nil? || attraction.longitude.nil?
+      {
+        lat: attraction.latitude,
+        lng: attraction.longitude
+      }
+    end
+    @markers = @markers.compact
   end
 end
 
