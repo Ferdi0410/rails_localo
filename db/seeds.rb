@@ -16,7 +16,7 @@ u1 = User.new(
   )
 
 u1.save
-
+#tour images
 url1 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527759029/nyqximtd6eg3zmxbjvpw.jpg"
 url2 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527759513/uyrd7shauafcbap7emb5.jpg"
 url3 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527760064/ii1rjcpestiawdrkkw4b.jpg"
@@ -45,6 +45,15 @@ t4 = Tour.new(
 t4.remote_photo_url = url4
 t4.save
 
+
+
+a1 = Attraction.new({title:"Reichstag", address: "Platz der Republik 1, 11011 Berlin", description: "Reichstag description", duration: 20 })
+a1.save
+
+a2 = Attraction.new({title:"Brandenburg gate", address: "Pariser Platz, 10117 Berlin",description: "Brandenburg gate description", duration: 15})
+a2.save
+
+a3 = Attraction.new({title:"Checkpoint charlie", address: "Friedrichstraße 43-45, 10117 Berlin", description: "Checkpoint Charlie description", duration: 35})
 t5 = Tour.new(
   {title:"Shoreditch", duration: 120, description:"Dive in the most urban part of London. Crab a beer and discover the Home District of James - an Institution in Shoreditch", category:"urban", city:"London"}
   )

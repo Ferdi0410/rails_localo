@@ -19,6 +19,8 @@
     <link href="https://fonts.googleapis.com/css?family=Sunflower:300" rel="stylesheet">
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
+    <%= javascript_pack_tag "map" %>
     <div class="push"></div>
     </div>
     <%= render 'shared/footer' %>
