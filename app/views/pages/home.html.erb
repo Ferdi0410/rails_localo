@@ -28,10 +28,15 @@
 <p>Popular Cities</p>
 <%= render 'shared/cardswap' %>
 </div>
+
 <div class="sublines">
 <p>Explore Cities</p>
-<%= render 'shared/cardswap' %>
-</div>
-<p><%= link_to "click me to go to show page", tour_path(@tours[0]) %></p>
-<p><%= link_to "click me to go to index page", tours_path %></p>
+<% @tours.each do |tour| %>
+      <div class="item">
+        <%= render 'shared/cardswap2', tour:tour %>
+      </div>
+    <% end %>
+ </div>
+
+
 
