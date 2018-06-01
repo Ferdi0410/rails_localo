@@ -4,8 +4,9 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "bootstrap": "3",
-    "greensock": "^1.20.2",
     "flickity": "^2.1.1",
+    "gmaps": "^0.4.24",
+    "greensock": "^1.20.2",
     "jquery": "^3.3.1"
   },
   "devDependencies": {
