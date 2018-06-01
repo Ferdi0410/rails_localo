@@ -1,30 +1,54 @@
-<h1><%= @tour.title %></h1>
+<%= render 'pages/homecard', tour:@tour %>
 
-
-<p style="display:inline"><%= link_to "play tour", play_tour_path(@tour) %></p>
-
+<%= link_to "Start tour", start_tour_tour_path(@tour), method: :post %>
 <%= link_to "back", tours_path %>
 
+
 <% tour_time = 0 %>
+<!-- load user's saved timeline -->
+<% if user_signed_in? && (current_user.steps.count != 0)%>
+  <% current_user.steps.find(1).update(completed:"completed")  %>
+  <% current_user.steps.find(2).update(completed:"in-progress") %>
+  <% current_user.steps.find(3).update(completed:"incomplete") %>
+  <ul class="timeline">
+    <% @tour.tour_attractions.each_with_index do |tour_attraction, index| %>
+    <% if index == @tour.attractions.count - 1 %>
+      <li class="timeline-milestone no-flicker <%= current_user.steps.find_by(tour_attraction_id: tour_attraction.id).completed  %> timeline-last" data-after="<%= tour_time %> min" data-coordinates="<%= tour_attraction.coordinates.to_json %>">
+    <% else %>
+      <li class="timeline-milestone no-flicker <%= current_user.steps.find_by(tour_attraction_id: tour_attraction.id).completed  %> " data-after="<%= tour_time %> min" data-coordinates="<%= tour_attraction.coordinates.to_json %>">
+    <% end %>
+      <div class="timeline-action is-expandable expanded">
+        <h2 class="title" tabindex="0" aria-controls="timeline-0-milestone-content-0"><%= tour_attraction.attraction.title %></h2>
+        <div class="content no-flicker" id="timeline-0-milestone-content-0" role="region" aria-expanded="false">
+          <span><%= tour_attraction.attraction.description %>
+          </span>
+          <p><%= current_user.steps.find_by(tour_attraction_id: tour_attraction.id).completed %></p>
+        </div>
+      </div>
+    </li>
+    <% tour_time += tour_attraction.attraction.duration %>
+    <% end %>
+  </ul>
+<!-- not logged in, blank timeline -->
+<% else %>
 <ul class="timeline">
   <% @tour.tour_attractions.each_with_index do |tour_attraction, index| %>
   <% if index == @tour.attractions.count - 1 %>
-    <li class="timeline-milestone no-flicker <%= current_user.steps.find_by(tour_attraction_id: tour_attraction.id).completed ? "is-completed" : "is-not-completed" %> timeline-last" data-after="<%= tour_time %> min">
+    <li class="timeline-milestone no-flicker incomplete %> timeline-last" data-after="<%= tour_time %> min">
   <% else %>
-    <li class="timeline-milestone no-flicker <%= current_user.steps.find_by(tour_attraction_id: tour_attraction.id).completed ? "is-completed" : "is-not-completed" %> " data-after="<%= tour_time %> min">
+    <li class="timeline-milestone no-flicker incomplete %> " data-after="<%= tour_time %> min">
   <% end %>
     <div class="timeline-action is-expandable expanded">
       <h2 class="title" tabindex="0" aria-controls="timeline-0-milestone-content-0"><%= tour_attraction.attraction.title %></h2>
       <div class="content no-flicker" id="timeline-0-milestone-content-0" role="region" aria-expanded="false">
         <span><%= tour_attraction.attraction.description %>
         </span>
-        <p><%= current_user.steps.find_by(tour_attraction_id: tour_attraction.id).completed ? "completed" : "not completed" %></p>
       </div>
     </div>
   </li>
-
   <% tour_time += tour_attraction.attraction.duration %>
   <% end %>
 </ul>
 
+<% end %>
 <%= javascript_pack_tag 'timeline' %>

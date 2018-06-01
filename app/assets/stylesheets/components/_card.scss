@@ -1,20 +1,20 @@
+.card-link {
+  text-decoration: none !important;
+}
+
 .big-card{
  border-radius: 10px;
  background-size: cover;
  height: 35vh;
  padding: 45px;
- width: 55vh;
+ width: 52vh;
  margin-top: 5px;
-  .card-description {
-  text-align: center;
-  color: white;
+ .card-description {
+    text-align: center;
+    color: white;
+    font-size: 40px;
   }
-}
-.col-xs-12 {
-  position: relative;
-  min-height: 1px;
-  padding-left: 5px;
-  padding-right: 5px;
+
 }
 
 .flickity-carousel {
@@ -50,6 +50,7 @@
   background-image: url(berlin.jpg);
   background-size: cover;
   border-radius: 5px;
+  margin-left: 4px;
 
 }
 .card .card-info {
@@ -119,7 +120,11 @@
 }
 
 .sublines p {
+  margin-left: 10px;
   margin-top: 20px;
-  font-family: Source Sans Pro;
-  font-family: bold;
+  font-family: Brandon, Helvetica, sans-serif;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #5f5b5b
+
 }

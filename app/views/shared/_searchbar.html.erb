@@ -1,8 +1,14 @@
+
 <%= form_tag tours_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
     placeholder: "Enter a City or Attraction"
+
+
   %>
   <%= hidden_field_tag :category, params[:category] %>
 <% end %>
+
+
+
