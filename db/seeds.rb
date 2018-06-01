@@ -56,39 +56,28 @@ t5.save
 
 
 
-a1 = Attraction.new({title:"Reichstag", address: "Platz der Republik 1, 11011 Berlin", description: "Reichstag description", duration: 20 })
+a1 = Attraction.new({title:"Reichstag", address: "Platz der Republik 1, 11011 Berlin", description: "Neo-Renaissance parliament building topped by a Norman Foster glass dome with 360-degree city views", duration: 20 })
 a1.save
 
-a2 = Attraction.new({title:"Brandenburg gate", address: "Pariser Platz, 10117 Berlin",description: "Brandenburg gate description", duration: 15})
+a2 = Attraction.new({title:"Brandenburg gate", address: "Pariser Platz, 10117 Berlin", description: "Restored 18th-centuray gate & landmark with 12 Doric columns topped by classical goddess statue", duration: 15})
 a2.save
 
 a3 = Attraction.new({title:"Checkpoint charlie", address: "Friedrichstraße 43-45, 10117 Berlin", description: "Checkpoint Charlie description", duration: 35})
+a3.save
 t6 = Tour.new(
   {title:"Shoreditch", duration: 120, description:"Dive in the most urban part of London. Crab a beer and discover the Home District of James - an Institution in Shoreditch", category:"urban", city:"London"}
   )
-
 t6.remote_photo_url = url6
 t6.save
 
-a1 = Attraction.new(
-  {title:"Eiffeltower", address:"Street", duration: 10}
-  )
-a1.save
 
-t4.attractions << a1
-t4.save
 
-a1 = Attraction.new({title:"Reichstag", description: "Neo-Renaissance parliament building topped by a Norman Foster glass dome with 360-degree city views", duration: 20 })
-a1.save
-
-a2 = Attraction.new({title:"Brandenburg gate", description: "Restored 18th-centuray gate & landmark with 12 Doric columns topped by classical goddess statue", duration: 15})
-a2.save
-
-a3 = Attraction.new({title:"Checkpoint charlie", description: "Checkpoint Charlie was the name given by the Western Allies to the best-known Berlin Wall crossing point between East Berlin and West Berlin during the Cold War (1947–1991).", duration: 35})
-a3.save
-
-a4 = Attraction.new({title:"Berlin Wall", description: "Constructed by the German Democratic Republic (GDR, East Germany), starting on 13 August 1961, the Wall cut off (by land) West Berlin from virtually all of surrounding East Germany and East Berlin until government officials opened it in November 1989", duration: 35})
+a4 = Attraction.new({title:"Berlin Wall", address: "Mühlenstraße 78, 10243 Berlin", description: "Constructed by the German Democratic Republic (GDR, East Germany), starting on 13 August 1961, the Wall cut off (by land) West Berlin from virtually all of surrounding East Germany and East Berlin until government officials opened it in November 1989", duration: 35})
 a4.save
+
+
+
+
 
 t1.attractions << a1
 t1.attractions << a2
