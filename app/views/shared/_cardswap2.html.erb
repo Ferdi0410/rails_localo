@@ -1,4 +1,3 @@
-<div class="flickity-carousel" id="myCarousel" data-ride="carousel" data-flickity='{ "cellAlign": "left", "freeScroll": true, "pageDots": false, "prevNextButtons": false}'>
 
  <div class="card carousel-cell">
    <%= link_to tour_path(tour), class: "card-link" do %>
@@ -6,11 +5,13 @@
      <div class="card-title">
        <%= tour.title %>
      </div>
+     <div class="card-city">
+      <%= tour.city %>
+        </div>
    </div>
    <%end %>
  </div>
 
 
-</div>
 
 

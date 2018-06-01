@@ -31,12 +31,12 @@
 
 <div class="sublines">
 <p>Explore Cities</p>
-<% @tours.each do |tour| %>
-      <div class="item">
+<div class="flickity-carousel" id="myCarousel" data-ride="carousel" data-flickity='{ "cellAlign": "left", "freeScroll": true, "pageDots": false, "prevNextButtons": false}'>
+<% @tours.shuffle.take(4).each do |tour| %>
         <%= render 'shared/cardswap2', tour:tour %>
-      </div>
-    <% end %>
+  <% end %>
  </div>
+</div>
 
 
 
