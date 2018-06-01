@@ -1,8 +1,22 @@
-<h1>This is my profile</h1>
+<h3>My profile</h3>
 
-<h2>Unwalked tours:</h2>
+<div class="sublines">
+  <p>Unwalked tours:</p>
+  <div class="flickity-carousel" id="myCarousel" data-ride="carousel" data-flickity='{ "cellAlign": "left", "freeScroll": true, "pageDots": false, "prevNextButtons": false}'>
+    <% @user_tours_unwalked.each do |user_tour| %>
+      <%= render 'shared/cardswap2', tour:user_tour.tour %>
+    <% end %>
+  </div>
+</div>
 
 
+<div class="sublines">
+  <p>Walked tours:</p>
+  <div class="flickity-carousel" id="myCarousel" data-ride="carousel" data-flickity='{ "cellAlign": "left", "freeScroll": true, "pageDots": false, "prevNextButtons": false}'>
+    <% @user_tours_walked.each do |user_tour| %>
+      <%= render 'shared/cardswap2', tour:user_tour.tour %>
+    <% end %>
+  </div>
+</div>
 
-<h2>Walked tours:</h2>
-<%= link_to "Home", root_path %>
+
