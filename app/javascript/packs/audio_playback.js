@@ -33,7 +33,3 @@ function fetchCurrentLocation() {
 }
 
 document.addEventListener('DOMContentLoaded', fetchCurrentLocation);
-
-
-
-

@@ -9,15 +9,14 @@
 
   <%= link_to 'Urban', tours_path(category: "urban", query: params[:query] ), class: "category-link #{'category-link-active' if params[:category] == 'urban'}",  query: params[:query] %>
 </div>
-<div class="row">
-  <div class="col-sm-8 col-sm-offset-2">
-    <div id="tours">
-      <% @tours.each do |tour|  %>
-        <%= render 'pages/bigcardindex', tour: tour %>
-      <% end %>
-    </div>
+<div class="container">
+  <div class="row">
+      <div id="tours">
+        <% @tours.each do |tour|  %>
+          <%= render 'pages/bigcardindex', tour: tour %>
+        <% end %>
+      </div>
   </div>
 </div>
-
 
 
