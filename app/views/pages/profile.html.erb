@@ -1,0 +1,22 @@
+<h3>My profile</h3>
+
+<div class="sublines">
+  <p>Unwalked tours:</p>
+  <div class="flickity-carousel" id="myCarousel" data-ride="carousel" data-flickity='{ "cellAlign": "left", "freeScroll": true, "pageDots": false, "prevNextButtons": false}'>
+    <% @user_tours_unwalked.each do |user_tour| %>
+      <%= render 'shared/cardswap2', tour:user_tour.tour %>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="sublines">
+  <p>Walked tours:</p>
+  <div class="flickity-carousel" id="myCarousel" data-ride="carousel" data-flickity='{ "cellAlign": "left", "freeScroll": true, "pageDots": false, "prevNextButtons": false}'>
+    <% @user_tours_walked.each do |user_tour| %>
+      <%= render 'shared/cardswap2', tour:user_tour.tour %>
+    <% end %>
+  </div>
+</div>
+
+
