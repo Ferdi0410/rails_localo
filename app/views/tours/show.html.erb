@@ -1,8 +1,11 @@
 <%= render 'pages/homecard', tour:@tour %>
+<div class="button-start">
 
-<%= link_to "Start tour", start_tour_tour_path(@tour), method: :post %>
-<%= link_to "back", tours_path %>
+<div class="category-form-show">
+  <%= link_to 'Start Tour', start_tour_tour_path(@tour), method: :post, class: "category-link #{'category-link-active'}" %>
 
+  <%= link_to 'Go Back', tours_path(@tour), class: "category-link #{'category-link'}" %>
+</div>
 
 <% tour_time = 0 %>
 <!-- load user's saved timeline -->

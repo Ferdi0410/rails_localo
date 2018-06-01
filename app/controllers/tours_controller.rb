@@ -29,7 +29,7 @@ class ToursController < ApplicationController
   def start_tour
     @tour = Tour.find(params[:id])
     current_user.tours << @tour
-    current_user.user_tours.last.update(status:"incomplete")
+    current_user.user_tours.last.update(status:"unwalked")
     redirect_to play_tour_path(@tour)
   end
 
