@@ -9,12 +9,18 @@
  padding: 45px;
  width: 52vh;
  margin-top: 5px;
+ position:relative;
  .card-description {
     text-align: center;
     color: white;
     font-size: 40px;
   }
 
+}
+.big-card .guide-avatar {
+  position:absolute;
+  bottom: 10px;
+  right: 10px;
 }
 
 .flickity-carousel {
@@ -144,5 +150,12 @@
   font-size: 25px;
   margin-left: 10px;
   color: #207387;
+}
+
+.card .card-delete {
+  color: white;
+  position:absolute;
+  bottom:2px;
+  left:8px;
 }
 

@@ -26,6 +26,7 @@ class ToursController < ApplicationController
     @tour = Tour.find(params[:id])
   end
 
+
   def start_tour
     @tour = Tour.find(params[:id])
     current_user.tours << @tour
@@ -50,6 +51,18 @@ class ToursController < ApplicationController
       }
     end
     @markers = @markers.compact
+  end
+
+  def guide
+    @tour = Tour.find(params[:id])
+  end
+
+
+  def delete_user_tour
+    @tour = Tour.find(params[:id])
+    user_tour = current_user.user_tours.find_by(tour_id:@tour.id)
+    user_tour.destroy
+    redirect_to pages_profile_path
   end
 end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_01_101920) do
+ActiveRecord::Schema.define(version: 2018_06_04_093151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(version: 2018_06_01_101920) do
     t.text "description"
     t.integer "duration"
     t.string "audio"
+  end
+
+  create_table "guides", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "steps", force: :cascade do |t|
@@ -57,6 +65,8 @@ ActiveRecord::Schema.define(version: 2018_06_01_101920) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "city"
+    t.bigint "guide_id"
+    t.index ["guide_id"], name: "index_tours_on_guide_id"
   end
 
   create_table "user_tours", force: :cascade do |t|
@@ -93,6 +103,7 @@ ActiveRecord::Schema.define(version: 2018_06_01_101920) do
   add_foreign_key "steps", "user_tours"
   add_foreign_key "tour_attractions", "attractions"
   add_foreign_key "tour_attractions", "tours"
+  add_foreign_key "tours", "guides"
   add_foreign_key "user_tours", "tours"
   add_foreign_key "user_tours", "users"
 end
