@@ -31,6 +31,7 @@ g1 = Guide.new(name:"Lito",description:"I am a tour provider for localo")
 g1.remote_photo_url = url_lito
 g1.save
 
+url1 = "http://berlijnoverzicht.nl/wp-content/uploads/2016/09/Checkpoint-Charlie-1.jpg"
 t1 = Tour.new(
   {title:"The story of Checkpoint Charlie", duration: 60, description:"A Cold War spy shares his story of the fascinating and terrifying battle of ideologies that once divided the world", category:"history", city:"Berlin"}
   )
