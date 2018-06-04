@@ -5,7 +5,7 @@
   <p>Unwalked tours:</p>
   <div class="flickity-carousel" id="myCarousel" data-ride="carousel" data-flickity='{ "cellAlign": "left", "freeScroll": true, "pageDots": false, "prevNextButtons": false}'>
     <% @user_tours_unwalked.each do |user_tour| %>
-      <%= render 'shared/cardswap2', tour:user_tour.tour %>
+      <%= render 'usertourcard', tour:user_tour.tour %>
     <% end %>
   </div>
 </div>
@@ -16,9 +16,12 @@
   <p>Walked tours:</p>
   <div class="flickity-carousel" id="myCarousel" data-ride="carousel" data-flickity='{ "cellAlign": "left", "freeScroll": true, "pageDots": false, "prevNextButtons": false}'>
     <% @user_tours_walked.each do |user_tour| %>
-      <%= render 'shared/cardswap2', tour:user_tour.tour %>
+      <%= render 'usertourcard', tour:user_tour.tour %>
     <% end %>
   </div>
 </div>
 
 
+<!-- New tours -->
+<!-- Started tours-->
+<!-- Completed tours -->

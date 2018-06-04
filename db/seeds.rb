@@ -8,8 +8,10 @@
 
 Tour.destroy_all
 User.destroy_all
+Guide.destroy_all
 Attraction.destroy_all
 puts "Destroyed all records"
+
 
 u1 = User.new(
   {email: "lito@gmail.com", password:"1111111", first_name: "Lito", username: "Litotechie"}
@@ -23,6 +25,13 @@ url3 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527760064/ii1rjcpesti
 url4 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527769344/axqjm7jleic7uevapme4.jpg"
 url5 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527862571/2405727112_4dbb70954a_b.jpg"
 url6 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527862790/shoreditch-london-guide.jpg"
+url_lito = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527186297/zlkezooorwzs6mzuwopt.jpg"
+
+g1 = Guide.new(name:"Lito",description:"I am a tour provider for localo")
+g1.remote_photo_url = url_lito
+g1.save
+
+url1 = "http://berlijnoverzicht.nl/wp-content/uploads/2016/09/Checkpoint-Charlie-1.jpg"
 t1 = Tour.new(
   {title:"The story of Checkpoint Charlie", duration: 60, description:"A Cold War spy shares his story of the fascinating and terrifying battle of ideologies that once divided the world", category:"history", city:"Berlin"}
   )
