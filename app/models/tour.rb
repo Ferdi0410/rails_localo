@@ -1,4 +1,5 @@
 class Tour < ApplicationRecord
+  belongs_to :guide
   has_many :user_tours, dependent: :destroy
   has_many :users, through: :user_tours
   has_many :tour_attractions
