@@ -9,7 +9,7 @@
 
 <% tour_time = 0 %>
 <!-- load user's saved timeline -->
-<% if user_signed_in? && (current_user.steps.count != 0)%>
+<% if user_signed_in? && (current_user.user_tours.where(tour_id:@tour.id).count != 0)%>
   <% current_user.steps.first&.update(completed:"completed")  %>
   <% current_user.steps.first(2)&.first&.update(completed:"in-progress") %>
   <% current_user.steps.last&.update(completed:"incomplete") %>
