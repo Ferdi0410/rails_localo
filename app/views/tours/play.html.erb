@@ -1,6 +1,9 @@
-<h1>This is the play page</h1>
-
-<%= link_to "back", tour_path(@tour) %>
+<div class="headline-play">
+<h2><%= @tour.title%></h2>
+</div>
+<div class ="button-play">
+<%= link_to "back", tour_path(@tour), class: "category-link #{'category-link'}" %>
+</div>
 <div class="audio-file">
 <%= audio_tag('', controls: true) %>
 </div>
@@ -8,7 +11,7 @@
 <div
   id="map"
   style="width: 100%;
-  height: 600px;"
+  height: 300px;"
   data-markers="<%= @markers.to_json %>"
 ></div>
 
