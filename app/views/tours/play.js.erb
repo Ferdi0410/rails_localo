@@ -1,4 +1,10 @@
 // Lancer le player avec @attraction OU afficher un message d'erreur
 <% if @attraction.present? %>
-  document.querySelector('audio').src = 'http://res.cloudinary.com/dgccrihdr/video/upload/pISg0HkQq9Dz.128.mp3'
+  // document.querySelector('#audio-file').src = 'http://res.cloudinary.com/dgccrihdr/video/upload/pISg0HkQq9Dz.128.mp3';
+  document.getElementById('audio-file').setAttribute('value', "http://res.cloudinary.com/dgccrihdr/video/upload/pISg0HkQq9Dz.128.mp3");
+
+  var evt = document.createEvent("HTMLEvents");
+  evt.initEvent("change", false, true);
+  document.getElementById('audio-file').dispatchEvent(evt);
 <% end %>
+

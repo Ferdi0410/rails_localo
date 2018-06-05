@@ -29,7 +29,18 @@
   color: #1c6f81;
 }
 
-.button-play {
-  margin-bottom: 20px;
-  margin-left: 280px;
+#play, #pause {
+  background: transparent;
+  border: none;
 }
+
+#play:focus {
+  outline: none;
+}
+
+#pause:focus {
+  outline: none;
+}
+
+
+
