@@ -1,9 +1,13 @@
-<h1>This is the play page</h1>
 
-<%= link_to "back", tour_path(@tour) %>
-<div class="audio-file">
-<%= audio_tag('', controls: true) %>
+<div class="audio-box">
+  <input id="audio-file" value="" class="hidden"></input>
+  <div id="siriwave"></div>
+  <div class="controls">
+    <button id="play"><i class="fas fa-play"></i> </button>
+    <button id="pause"><i class="fas fa-pause"></i></button>
+  </div>
 </div>
+
 
 <div
   id="map"
@@ -11,6 +15,8 @@
   height: 600px;"
   data-markers="<%= @markers.to_json %>"
 ></div>
+
+<%= javascript_pack_tag "init_howler" %>
 
 
 
