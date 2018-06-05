@@ -45,16 +45,36 @@ function trackMe(map) {
     // this.isTracking = true;
       const userMarker = map.addMarker(userPosition)
     navigator.geolocation.watchPosition((position) => {
-      const newPosition = new google.maps.LatLng({lat: position.coords.latitude, lng: position.coords.longitude});
-      console.log('new position')
-      console.log(position.coords)
-      map.setCenter(position.coords.latitude, position.coords.longitude);
-      userMarker.setPosition(newPosition)
+      updateCurrentPosition(map, userMarker, position)
     });
   } else {
     alert("Geolocation is not supported by this browser.");
   }
 }
+
+function updateCurrentPosition(map, marker, position) {
+  const newPosition = new google.maps.LatLng({lat: position.coords.latitude, lng: position.coords.longitude});
+  map.setCenter(position.coords.latitude, position.coords.longitude);
+  marker.setPosition(newPosition)
+}
+
+// function watchCurrentPosition() {
+//     var positionTimer = navigator.geolocation.watchPosition(function(position) {
+//         setMarkerPosition(userLocation, position);
+//         map.panTo(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+//     });
+// }
+
+// function setUserLocation(pos) {
+//     // marker for userLocation
+//     userLocation = new google.maps.Marker({
+//            map : map,
+//            position : new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
+//            title : "You are here",
+//            icon : "../img/user-location.svg",
+//     // scroll to userLocation
+//     map.panTo(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+// });
 
 
 // map.drawRoute({
