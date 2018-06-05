@@ -2,6 +2,11 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!
   def home
     @tours = Tour.all
+    @guides = Guide.all
+  end
+
+  def guide
+    @guide = Guide.find(params[:id])
   end
 
   def profile
