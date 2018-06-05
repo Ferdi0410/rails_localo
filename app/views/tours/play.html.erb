@@ -1,12 +1,15 @@
 <div class="headline-play">
 <h2><%= @tour.title%></h2>
 </div>
-<div class ="button-play">
+<div class="audio-box">
+  <input id="audio-file" value="" class="hidden"></input>
+  <div id="siriwave"></div>
+  <div class="controls">
+    <button id="play"><i class="fas fa-play"></i> </button>
+    <button id="pause"><i class="fas fa-pause"></i></button>
+  </div>
 <%= link_to "back", tour_path(@tour), class: "category-link #{'category-link'}" %>
-</div>
-<div class="audio-file">
-<%= audio_tag('', controls: true) %>
-</div>
+
 
 <div
   id="map"
@@ -14,6 +17,8 @@
   height: 300px;"
   data-markers="<%= @markers.to_json %>"
 ></div>
+
+<%= javascript_pack_tag "init_howler" %>
 
 
 

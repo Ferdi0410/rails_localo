@@ -7,7 +7,9 @@
     "flickity": "^2.1.1",
     "gmaps": "^0.4.24",
     "greensock": "^1.20.2",
-    "jquery": "^3.3.1"
+    "howler": "^2.0.12",
+    "jquery": "^3.3.1",
+    "siriwavejs": "^2.0.2"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"
