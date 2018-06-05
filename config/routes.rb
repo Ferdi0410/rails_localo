@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   resources :tours, only: [:index, :show] do
     get 'play', on: :member
+    get 'guide', on: :member
     post 'start_tour', on: :member
+    delete 'delete_user_tour', on: :member
   end
 
   get "pages/profile", to: "pages#profile"

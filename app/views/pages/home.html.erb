@@ -30,6 +30,14 @@
 </div>
 
 <div class="sublines">
+<p>The People behind the voice</p>
+<div class="flickity-carousel" id="myCarousel" data-ride="carousel" data-flickity='{ "cellAlign": "left", "freeScroll": true, "pageDots": false, "prevNextButtons": false}'>
+<% @tours.shuffle.take(4).each do |tour| %>
+        <%= render 'shared/cardswap2', tour:tour %>
+  <% end %>
+ </div>
+
+<div class="sublines">
 <p>Explore Cities</p>
 <div class="flickity-carousel" id="myCarousel" data-ride="carousel" data-flickity='{ "cellAlign": "left", "freeScroll": true, "pageDots": false, "prevNextButtons": false}'>
 <% @tours.shuffle.take(4).each do |tour| %>

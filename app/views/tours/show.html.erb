@@ -1,9 +1,12 @@
-<%= render 'pages/homecard', tour:@tour %>
+<%= render 'cardwithguide', tour:@tour %>
 <div class="button-start">
 
 <div class="category-form-show">
-  <%= link_to 'Start Tour', start_tour_tour_path(@tour), method: :post, class: "category-link #{'category-link-active'}" %>
-
+  <% if user_signed_in? && (current_user.user_tours.where(tour_id:@tour.id).count == 0)%>
+    <%= link_to 'Start Tour', start_tour_tour_path(@tour), method: :post, class: "category-link #{'category-link-active'}" %>
+  <% else %>
+    <%= link_to 'Resume Tour', play_tour_path(@tour), class: "category-link #{'category-link-active'}" %>
+  <% end %>
   <%= link_to 'Go Back', tours_path(@tour), class: "category-link #{'category-link'}" %>
 </div>
 
@@ -34,24 +37,24 @@
   </ul>
 <!-- not logged in, blank timeline -->
 <% else %>
-<ul class="timeline">
-  <% @tour.tour_attractions.each_with_index do |tour_attraction, index| %>
-  <% if index == @tour.attractions.count - 1 %>
-    <li class="timeline-milestone no-flicker incomplete %> timeline-last" data-after="<%= tour_time %> min">
-  <% else %>
-    <li class="timeline-milestone no-flicker incomplete %> " data-after="<%= tour_time %> min">
-  <% end %>
-    <div class="timeline-action is-expandable expanded">
-      <h2 class="title" tabindex="0" aria-controls="timeline-0-milestone-content-0"><%= tour_attraction.attraction.title %></h2>
-      <div class="content no-flicker" id="timeline-0-milestone-content-0" role="region" aria-expanded="false">
-        <span><%= tour_attraction.attraction.description %>
-        </span>
+  <ul class="timeline">
+    <% @tour.tour_attractions.each_with_index do |tour_attraction, index| %>
+    <% if index == @tour.attractions.count - 1 %>
+      <li class="timeline-milestone no-flicker incomplete %> timeline-last" data-after="<%= tour_time %> min">
+    <% else %>
+      <li class="timeline-milestone no-flicker incomplete %> " data-after="<%= tour_time %> min">
+    <% end %>
+      <div class="timeline-action is-expandable expanded">
+        <h2 class="title" tabindex="0" aria-controls="timeline-0-milestone-content-0"><%= tour_attraction.attraction.title %></h2>
+        <div class="content no-flicker" id="timeline-0-milestone-content-0" role="region" aria-expanded="false">
+          <span><%= tour_attraction.attraction.description %>
+          </span>
+        </div>
       </div>
-    </div>
-  </li>
-  <% tour_time += tour_attraction.attraction.duration %>
-  <% end %>
-</ul>
-
+    </li>
+    <% tour_time += tour_attraction.attraction.duration %>
+    <% end %>
+  </ul>
 <% end %>
+
 <%= javascript_pack_tag 'timeline' %>
