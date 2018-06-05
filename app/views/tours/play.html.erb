@@ -1,6 +1,7 @@
 <div class="headline-play">
 <h2><%= @tour.title%></h2>
 </div>
+<%= link_to "back", tour_path(@tour), class: "category-link #{'category-link'}" %>
 <div class="audio-box">
   <input id="audio-file" value="" class="hidden"></input>
   <div id="siriwave"></div>
@@ -8,7 +9,6 @@
     <button id="play"><i class="fas fa-play"></i> </button>
     <button id="pause"><i class="fas fa-pause"></i></button>
   </div>
-<%= link_to "back", tour_path(@tour), class: "category-link #{'category-link'}" %>
 
 
 <div

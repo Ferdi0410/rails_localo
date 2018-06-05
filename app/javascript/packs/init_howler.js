@@ -10,10 +10,10 @@ var siriWave = new SiriWave({
   container: document.getElementById('siriwave'),
   width: window.innerWidth,
   height: 200,
-  speed: 0.04,
-  amplitude: 0.7,
-  color: '#8a0010',
-  frequency: 2
+  speed: 0.02,
+  amplitude: 0.4,
+  color: 'white',
+  frequency: 1
 });
 
 var sound;
