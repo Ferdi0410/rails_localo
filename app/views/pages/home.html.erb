@@ -32,8 +32,8 @@
 <div class="sublines">
 <p>The People behind the voice</p>
 <div class="flickity-carousel" id="myCarousel" data-ride="carousel" data-flickity='{ "cellAlign": "left", "freeScroll": true, "pageDots": false, "prevNextButtons": false}'>
-<% @tours.shuffle.take(4).each do |tour| %>
-        <%= render 'shared/cardswap2', tour:tour %>
+<% @guides.each do |guide| %>
+        <%= render 'shared/cardswap3', guide:guide %>
   <% end %>
  </div>
 
