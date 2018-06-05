@@ -1,0 +1,60 @@
+<%= render 'cardwithguide', tour:@tour %>
+<div class="button-start">
+
+<div class="category-form-show">
+  <% if user_signed_in? && (current_user.user_tours.where(tour_id:@tour.id).count == 0)%>
+    <%= link_to 'Start Tour', start_tour_tour_path(@tour), method: :post, class: "category-link #{'category-link-active'}" %>
+  <% else %>
+    <%= link_to 'Resume Tour', play_tour_path(@tour), class: "category-link #{'category-link-active'}" %>
+  <% end %>
+  <%= link_to 'Go Back', tours_path(@tour), class: "category-link #{'category-link'}" %>
+</div>
+
+<% tour_time = 0 %>
+<!-- load user's saved timeline -->
+<% if user_signed_in? && (current_user.user_tours.where(tour_id:@tour.id).count != 0)%>
+  <% current_user.steps.first&.update(completed:"completed")  %>
+  <% current_user.steps.first(2)&.first&.update(completed:"in-progress") %>
+  <% current_user.steps.last&.update(completed:"incomplete") %>
+  <ul class="timeline">
+    <% @tour.tour_attractions.each_with_index do |tour_attraction, index| %>
+    <% if index == @tour.attractions.count - 1 %>
+      <li class="timeline-milestone no-flicker <%= current_user.steps.find_by(tour_attraction_id: tour_attraction.id).completed  %> timeline-last" data-after="<%= tour_time %> min" data-coordinates="<%= tour_attraction.coordinates.to_json %>">
+    <% else %>
+      <li class="timeline-milestone no-flicker <%= current_user.steps.find_by(tour_attraction_id: tour_attraction.id).completed  %> " data-after="<%= tour_time %> min" data-coordinates="<%= tour_attraction.coordinates.to_json %>">
+    <% end %>
+      <div class="timeline-action is-expandable expanded">
+        <h2 class="title" tabindex="0" aria-controls="timeline-0-milestone-content-0"><%= tour_attraction.attraction.title %></h2>
+        <div class="content no-flicker" id="timeline-0-milestone-content-0" role="region" aria-expanded="false">
+          <span><%= tour_attraction.attraction.description %>
+          </span>
+          <p><%= current_user.steps.find_by(tour_attraction_id: tour_attraction.id).completed %></p>
+        </div>
+      </div>
+    </li>
+    <% tour_time += tour_attraction.attraction.duration %>
+    <% end %>
+  </ul>
+<!-- not logged in, blank timeline -->
+<% else %>
+  <ul class="timeline">
+    <% @tour.tour_attractions.each_with_index do |tour_attraction, index| %>
+    <% if index == @tour.attractions.count - 1 %>
+      <li class="timeline-milestone no-flicker incomplete %> timeline-last" data-after="<%= tour_time %> min">
+    <% else %>
+      <li class="timeline-milestone no-flicker incomplete is-completed%> " data-after="<%= tour_time %> min">
+    <% end %>
+      <div class="timeline-action is-expandable expanded">
+        <h2 class="title" tabindex="0" aria-controls="timeline-0-milestone-content-0"><%= tour_attraction.attraction.title %></h2>
+        <div class="content no-flicker" id="timeline-0-milestone-content-0" role="region" aria-expanded="false">
+          <span><%= tour_attraction.attraction.description %>
+          </span>
+        </div>
+      </div>
+    </li>
+    <% tour_time += tour_attraction.attraction.duration %>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= javascript_pack_tag 'timeline' %>
