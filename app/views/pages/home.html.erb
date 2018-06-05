@@ -29,12 +29,13 @@
 <%= render 'shared/cardswap' %>
 </div>
 
-<div class="sublines">
+<div class="sublines-avatar">
 <p>The People behind the voice</p>
 <div class="flickity-carousel" id="myCarousel" data-ride="carousel" data-flickity='{ "cellAlign": "left", "freeScroll": true, "pageDots": false, "prevNextButtons": false}'>
 <% @guides.each do |guide| %>
         <%= render 'shared/cardswap3', guide:guide %>
   <% end %>
+ </div>
  </div>
 
 <div class="sublines">

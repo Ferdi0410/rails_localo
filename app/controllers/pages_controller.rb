@@ -5,6 +5,10 @@ class PagesController < ApplicationController
     @guides = Guide.all
   end
 
+  def guide
+    @guide = Guide.find(params[:id])
+  end
+
   def profile
     @tours = current_user.tours
     @user_tours_unwalked = current_user.user_tours.where(status:"unwalked")
