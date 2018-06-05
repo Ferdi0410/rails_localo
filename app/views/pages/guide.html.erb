@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="bio">
+    <div class="guide-avatar">
+      <%= cl_image_tag @guide.photo, width: 80, height: 80, crop: :thumb, gravity: :face, class: "avatar-bordered-large" %>
+    </div>
+    <div class="guide-name">
+      <h4>Hey, I'm <%= @guide.name %> !</h4>
+    </div>
+  </div>
+
+  <div class="guide-description">
+    <%= @guide.description %>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam aperiam commodi assumenda, consequatur facere. Quia ex esse excepturi officiis aliquam molestiae quasi, ut omnis nesciunt, recusandae porro impedit nulla iure.</p>
+  </div>
+
+  <div class="sublines">
+    <p>Tours I'm currently invovled in:</p>
+    <div class="flickity-carousel" id="myCarousel" data-ride="carousel" data-flickity='{ "cellAlign": "left", "freeScroll": true, "pageDots": false, "prevNextButtons": false}'>
+      <% @guide.tours.each do |tour| %>
+        <%= render 'shared/cardswap2', tour:tour %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="category-form-show">
+    <%= link_to 'Back', root_path, class: "category-link #{'category-link-active'}" %>
+  </div>
+</div>
