@@ -120,15 +120,15 @@ clubs_a2 = Attraction.new({title:"Watergate", address: "Falckensteinstraße 49, 
 clubs_a3 = Attraction.new({title:"IPSE", address: "Vor dem Schlesischen Tor 2, 10997 Berlin", description: "PSE is the open air club of the Berlin-Kreuzbergs's well-known Freischwimmer Restaurant, the club's direct neighbour.", duration: 60 })
 clubs_a4 = Attraction.new({title:"Berghain", address: "Am Wriezener Bahnhof, 10243 Berlin", description: "Berghain is a nightclub in Berlin, Germany. It is named after its location near the border between Kreuzberg and Friedrichshain in Berlin, and is a short walk from Berlin Ostbahnhof main line railway station", duration: 120 })
 # assign guides to tours
-t1.guide = g1
+t1.guide = g2
 t1.save
 t2.guide = g2
 t2.save
 t3.guide = g5
 t3.save
-t4.guide = g4
+t4.guide = g2
 t4.save
-t5.guide = g3
+t5.guide = g2
 t5.save
 
 # build tours with attractions
