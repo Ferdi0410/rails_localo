@@ -10,7 +10,7 @@ class UserTour < ApplicationRecord
 
   def create_steps
     tour.tour_attractions.each do |tour_attract|
-      Step.create(user_tour: self, tour_attraction: tour_attract, completed: "incomplete")
+      Step.create(user_tour: self, tour_attraction: tour_attract, completed: "is-future")
     end
   end
 end

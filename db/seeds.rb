@@ -29,10 +29,33 @@ url_lito = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527186297/zlkezoo
 # attraction url
 url7 = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Checkpoint_Charlie_1961-10-27.jpg/290px-Checkpoint_Charlie_1961-10-27.jpg"
 
+url_ferdi = "http://res.cloudinary.com/dgccrihdr/image/upload/v1528199966/28942904_10156035825481702_1708255590_o.jpg"
+url_ylito = "http://res.cloudinary.com/dgccrihdr/image/upload/v1528199944/255926_10150187295392984_8256731_o.jpg"
+url_tony = "http://res.cloudinary.com/dgccrihdr/image/upload/v1528199937/hhiiiockgsi2hl04lt4u_1.jpg"
+url_dome = "http://res.cloudinary.com/dgccrihdr/image/upload/v1528204124/17522792_1329289437113836_606457125750450379_n.jpg"
+
+
 
 g1 = Guide.new(name:"Lito", description:"I am a tour provider for localo")
 g1.remote_photo_url = url_lito
 g1.save
+
+g2 = Guide.new(name:"Ferdi",description:"El Chefe brings you to X-Berg and Neukölln")
+g2.remote_photo_url = url_ferdi
+g2.save
+
+g3 = Guide.new(name:"Young Lito",description:"Brings you to the nicest corners of Brussels")
+g3.remote_photo_url = url_ylito
+g3.save
+
+g4 = Guide.new(name:"Tony Maguire",description:"Gets you higher than Spiderman")
+g4.remote_photo_url = url_tony
+g4.save
+
+g5 = Guide.new(name:"Dome the Ghost",description:"Super Hipster with excessive lifestyle shows you every corner of Berghain and co.")
+g5.remote_photo_url = url_dome
+g5.save
+
 
 url1 = "http://berlijnoverzicht.nl/wp-content/uploads/2016/09/Checkpoint-Charlie-1.jpg"
 t1 = Tour.new(
@@ -90,8 +113,16 @@ a4 = Attraction.new({title:"Berlin Wall", address: "Mühlenstraße 78, 10243 Ber
 a4.save
 
 
-
-
+t1.guide = g1
+t1.save
+t2.guide = g2
+t2.save
+t3.guide = g3
+t3.save
+t4.guide = g4
+t4.save
+t5.guide = g5
+t5.save
 
 t1.attractions << a1
 t1.attractions << a2

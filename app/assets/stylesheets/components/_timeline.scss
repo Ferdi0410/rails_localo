@@ -1,162 +1,169 @@
-.no-flicker {
-    -webkit-backface-visibility: hidden;
-    -webkit-transform: translate3d(0,0,0);
+
+$timeline-color: #00818A;
+$timeline-future-color: #8DACB8;
+$timeline-line-width: 2px;
+$timeline-size: 32px;
+
+.page {
+  max-width: 1000px;
+  margin: 20px 40px;
 }
 
 .timeline {
   list-style: none;
-  margin: 20px 70px 25px 90px;
-  max-width: 800px;
-  padding: 0;
+  margin: 25px 0 22px; padding: 0;
   position: relative;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+  @include box-sizing(border-box);
+
+  &:after {
+    border: 6px solid;
+    border-top-width: 13px;
+    border-color: $timeline-color transparent transparent transparent;
+    content: "";
+    display: block;
+    position: absolute; bottom: -19px; left: 15px;
+  }
 }
 
-.timeline-horizontal:after {
-  border-top-width: 6px;
-  border-left-width: 13px;
-  border-color: transparent transparent transparent #3c3c3b;
-  top: 15px;
-  right: 0;
-  bottom: auto;
-  left: auto;
-}
+.timeline-horizontal {
+  &:after {
+    border-top-width: 6px;
+    border-left-width: 13px;
+    border-color: transparent transparent transparent $timeline-color;
+    top: 15px; right: 0; bottom: auto; left: auto;
+  }
 
-.timeline-horizontal .timeline-milestone {
-  border-top: 2px solid #00637d;
-  display: inline;
-  float: left;
-  margin: 20px 0 0 0;
-  padding: 40px 0 0 0;
-}
+  .timeline-milestone {
+    border-top: $timeline-line-width solid $timeline-color;
+    display: inline;
+    float: left;
+    margin: 20px 0 0 0; padding: 40px 0 0 0;
 
-.timeline-horizontal .timeline-milestone:before {
-  top: -17px;
-  left: auto;
-}
+    &:before {
+      top: -(($timeline-line-width / 2) + ($timeline-size / 2)); left: auto;
+    }
 
-.timeline-horizontal .timeline-milestone.is-completed:after {
-  top: -17px;
-  left: 0;
+    &.is-completed {
+      &:after {
+        top: -(($timeline-line-width / 2) + ($timeline-size / 2)); left: 0;
+      }
+    }
+  }
 }
 
 .timeline-milestone {
-    border-left: 4px solid #cacece;
-    margin: 0 0 0 20px;
-    padding: 0 0 5px 40px;
-    position: relative;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
+  border-left: $timeline-line-width solid $timeline-color;
+  margin: 0 0 0 20px; padding: 0 0 5px 25px;
+  position: relative;
+  @include box-sizing(border-box);
 
-.timeline-milestone:before {
-  border-radius: 50%;
-  content: "";
-  display: block;
-  position: absolute;
-  left: -9px;
-  width: 14px;
-  height: 14px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
+  &:before {
+    border: ($timeline-line-width * 3.5) solid $timeline-color; border-radius: 50%;
+    content: "";
+    display: block;
+    position: absolute; left: -(($timeline-line-width / 2) + ($timeline-size / 2));
+    width: $timeline-size; height: $timeline-size;
+    @include box-sizing(border-box);
+  }
 
-.timeline-last {
-  border-left: 4px solid transparent;
-}
+  &.is-completed {
+    &:before {
+      background-color: $timeline-color;
+    }
 
-.timeline-milestone.no-dot:before {
-  width:0px;
-  height:0px
-}
+    &:after {
+      color: #FFF;
+      content: "\f00c";
+      display: block;
+      font-family: "FontAwesome";
+      line-height: $timeline-size;
+      position: absolute; top: 0; left: -(($timeline-line-width / 2) + ($timeline-size / 2));
+      text-align: center;
+      width: $timeline-size; height: $timeline-size;
+      @include box-sizing(border-box);
+    }
+  }
 
-.timeline-milestone:after {
-    content: attr(data-after);
-    position: absolute;
-    left: -60px;
-    top: -3px;
-    font-size: 14px;
-}
+  &.is-current {
+    &:before {
+      background-color: #EEE;
+    }
+  }
 
-.timeline-milestone.no-dot:after {
-  content: ""
-}
+  &.is-future {
+    &:before {
+      background-color: $timeline-future-color;
+      border: 0;
+    }
 
-.timeline-milestone.incomplete:before, .timeline-milestone.is-current:before {
-  background-color: #cacece;
+    .timeline-action .title {
+      color: $timeline-future-color;
+    }
+  }
 }
-
-.timeline-milestone.completed:before {
-  background-color: green;
-}
-
-.timeline-milestone.in-progress:before {
-  background-color: orange;
-}
-
 
 .timeline-action {
-  padding: 16px 0px;
-  position: relative;
-  top: -22px;
-  border-bottom: 1px solid #bfbfbf
-}
-.timeline-action.is-expandable {
-  cursor: pointer;
-}
-.timeline-action.is-expandable .title {
-  position: relative;
-}
-.timeline-action.is-expandable .title:focus {
-  outline: 0;
-}
-.timeline-action.is-expandable .title:after {
-  border: 6px solid #666;
-  border-color: transparent transparent transparent #666;
-  content: "";
-  display: block;
-  position: absolute;
-  top: 6px;
-  right: 0;
-}
-.timeline-action.is-expandable .content {
-  height:0px;
-}
-.timeline-action.is-expandable.is-expanded .title:after {
-  border-color: #666 transparent transparent transparent;
-  top: 10px;
-  right: 5px;
+  background-color: #FFF;
+  padding: 12px 10px 12px 20px;
+  position: relative; top: -8px;
+
+  &.is-expandable {
+    .title {
+      cursor: pointer;
+      position: relative;
+
+      &:focus {
+        outline: 0;
+      }
+
+      &:after {
+        border: 6px solid #666;
+        border-color: transparent transparent transparent #666;
+        content: "";
+        display: block;
+        position: absolute; top: 6px; right: 0;
+      }
+    }
+
+    .content { display: none; }
+
+    &.is-expanded {
+      .title:after {
+        border-color: #666 transparent transparent transparent;
+        top: 10px; right: 5px;
+      }
+
+      .content {
+        display: block;
+        margin: 10px 5px;
+      }
+    }
+  }
+
+  .title, .content {
+    word-wrap: break-word;
+  }
+
+  .title {
+    color: $timeline-color;
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .date {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .content {
+    font-size: 14px;
+  }
 }
 
-.timeline-action .title, .timeline-action .content {
-  word-wrap: break-word;
-}
-.timeline-action .title {
-  font-size: 18px;
-  margin: 0;
-}
-.timeline-action .date {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 15px;
-}
-.timeline-action .content {
-  font-size: 14px;
-  line-height:1.5em;
-  max-width:90%;
-  font-weight:100;
+.file-list {
+  line-height: 1.4;
+  list-style: none;
+  padding-left: 10px;
 }
 
-.timeline-action .content span {
-  display: inline-block;
-  padding:12px 0px;
-  display:none;
-}
-
-.timeline-last .timeline-action {
-  border: none;
-}
