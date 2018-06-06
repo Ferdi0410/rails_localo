@@ -1,15 +1,19 @@
 .category-link{
-  padding: 12px 18px 10px;
-  text-align: center;
-  border-radius: 4px;
-  border: solid 1px silver;
-  background-color: silver;
-  opacity: 0.6;
-  margin: 4px;
-  color: grey;
-  font-family: arial;
-  text-decoration: none !important;
-  flex: 0 1 150px;
+     padding: 18px 11px 11px;
+    text-align: center;
+    border-radius: 4px;
+    border: solid 1px silver;
+    background-color: silver;
+    opacity: 0.6;
+    margin: 4px;
+    color: grey;
+    font-family: Roboto;
+    text-decoration: none !important;
+    flex: 0 1 150px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 14px;
+    text-transform: uppercase;
 }
 
 .category-link-active {
@@ -21,9 +25,12 @@
 }
 
 .category-form {
-  padding: 20px;
+  padding-top: 10px;
   display: flex;
   flex-wrap: wrap;
+  padding-bottom: 10px;
+  padding-left: 27px;
+  padding-right: 20px;
 }
 
 .category-form-show {

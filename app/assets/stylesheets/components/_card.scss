@@ -77,8 +77,15 @@
 }
 .card .card-title {
   color: white;
-  margin-left: 10px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    margin-left: 10px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    padding-top: 45px;
+    font-size: 32px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    line-height: 27px;
+    font-family: Roboto;
 }
 
 .card .card-image {
@@ -189,7 +196,7 @@
   margin-left: 4px !important;
 }
 
-.card .card-city {
+.card .card-city2 {
   color: white;
   position: absolute;
   bottom: 0;
@@ -197,15 +204,31 @@
   margin-right: 5px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   letter-spacing: 1px;
+  font-family: Roboto;
+}
+
+.card .card-title2 {
+  color: white;
+    margin-left: px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    padding-top: 45px;
+    font-size: 32px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    line-height: 27px;
+    font-family: Roboto;
 }
 
 .bigcardindex .description-index {
-      font-size: 12px;
-    font-color: #D9D968;
-    margin-left: 15px;
-    margin-right: 15px;
-    font-family: Lato;
+  font-size: 12px;
+  font-color: #D9D945;
+  margin-left: 15px;
+  margin-right: 15px;
+  font-family: Lato;
+  text-align: center;
 }
+
 .profile-page h3 {
   font-size: 25px;
   margin-left: 10px;
@@ -238,4 +261,9 @@
     h1 {
 
     }
+}
+
+.container {
+      padding-left: 25px;
+    padding-right: 25px;
 }
