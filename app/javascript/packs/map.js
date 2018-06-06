@@ -41,6 +41,6 @@ function updateCurrentPosition(map, marker, position) {
 const newPosition = new google.maps.LatLng({lat: position.coords.latitude, lng: position.coords.longitude});
 map.setCenter(position.coords.latitude, position.coords.longitude);
 marker.setPosition(newPosition)
-}
-  }
+    }
+   }
  }

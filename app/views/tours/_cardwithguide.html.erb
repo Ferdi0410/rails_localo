@@ -1,17 +1,37 @@
 <div class="index-box">
   <div class="col-xs-12">
-    <div class="big-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path tour.photo, crop: :fill %>');">
-      <div class="card-description">
-        <%= tour.title %>
+    <div class="show-background">
+      <div class="big-card show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path tour.photo, crop: :fill %>');">
+        <div class="card-description">
+          <%= tour.title %>
+        </div>
       </div>
-      <% if tour.guide != nil %>
+      <div class="info-box">
+        <div class="avatar-all">
+        <% if tour.guide != nil %>
         <div class="guide-avatar">
           <%= link_to guide_tour_path(tour), class: "avatar-bordered" do %>
           <%= cl_image_tag @tour.guide.photo, width: 80, height: 80, crop: :thumb, gravity: :face, class: "avatar-bordered" %>
           <% end %>
         </div>
-      <% end %>
+        <div class="guide-avar-name">
+          <p>Hi, this is <%= tour.guide.name %>'s Tour.</p>
+        </div>
+        <% end %>
+      </div>
+        <div class="info-duration">
+
+          <div class="icon-eiffel">
+          <i class="far fa-clock"></i>
+         <p> <%= tour.duration %>min</p>
+        </div>
+      </div>
+      <div class="info-amount">
+        <i class="fab fa-periscope"></i>
+       <%= tour.attractions.count %>
+      </div>
     </div>
   </div>
+</div>
 </div>
 
