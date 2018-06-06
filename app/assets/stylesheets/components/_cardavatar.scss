@@ -1,10 +1,10 @@
 .avatar-image {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  border-radius: 5px;
-  margin-left: 0px;
-  background-position: center;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    border-radius: 3px;
+    margin-left: 0px;
+    background-position: center;
   }
 
 .sublines-avatar .flickity-viewport {
@@ -14,6 +14,7 @@
 .sublines-avatar .card .carousel-cell {
   height: 200px;
   width: 150px;
+
   }
 
 .sublines-avatar .carousel-cell {
@@ -33,6 +34,3 @@
   color: #5f5b5b;
 }
 
-.sublines-avatar .flickity-viewport {
-  margin-left: 0px;
-}
