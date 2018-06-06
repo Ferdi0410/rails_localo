@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :user_tours, dependent: :destroy
   has_many :steps, through: :user_tours
   has_many :tours, through: :user_tours
+  mount_uploader :photo, PhotoUploader
 end
