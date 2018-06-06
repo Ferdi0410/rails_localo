@@ -1,7 +1,7 @@
 <div class="container">
   <div class="bio">
     <div class="guide-avatar">
-      <%= cl_image_tag @tour.guide.photo, width: 80, height: 80, crop: :thumb, gravity: :face, class: "avatar-bordered-large" %>
+      <%= cl_image_tag @tour.guide.photo, width: 80, height: 80, crop: :thumb, gravity: :face, secure: true, class: "avatar-bordered-large" %>
     </div>
     <div class="guide-name">
       <h4>Hey, I'm <%= @tour.guide.name %> !</h4>

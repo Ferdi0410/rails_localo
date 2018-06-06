@@ -26,7 +26,8 @@ function fetchCurrentLocation() {
        })
      },
     function error(error_message) {
-      console.error('An error has occured while retrieving location', error_message)
+      console.error('An error has occured while retrieving location', error_message);
+      document.getElementById('howler-errors').innerHTML = error_message.message + error_message.code;
     }
   );
   } else {

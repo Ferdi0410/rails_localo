@@ -13,22 +13,22 @@ Attraction.destroy_all
 puts "Destroyed all records"
 
 #tour images
-url1 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527759029/nyqximtd6eg3zmxbjvpw.jpg"
-url2 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527759513/uyrd7shauafcbap7emb5.jpg"
-url3 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527760064/ii1rjcpestiawdrkkw4b.jpg"
-url4 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527769344/axqjm7jleic7uevapme4.jpg"
-url5 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527862571/2405727112_4dbb70954a_b.jpg"
-url6 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527862790/shoreditch-london-guide.jpg"
-url_lito = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527186297/zlkezooorwzs6mzuwopt.jpg"
+url1 = "https://res.cloudinary.com/dgccrihdr/image/upload/v1527759029/nyqximtd6eg3zmxbjvpw.jpg"
+url2 = "https://res.cloudinary.com/dgccrihdr/image/upload/v1527759513/uyrd7shauafcbap7emb5.jpg"
+url3 = "https://res.cloudinary.com/dgccrihdr/image/upload/v1527760064/ii1rjcpestiawdrkkw4b.jpg"
+url4 = "https://res.cloudinary.com/dgccrihdr/image/upload/v1527769344/axqjm7jleic7uevapme4.jpg"
+url5 = "https://res.cloudinary.com/dgccrihdr/image/upload/v1527862571/2405727112_4dbb70954a_b.jpg"
+url6 = "https://res.cloudinary.com/dgccrihdr/image/upload/v1527862790/shoreditch-london-guide.jpg"
+url_lito = "https://res.cloudinary.com/dgccrihdr/image/upload/v1527186297/zlkezooorwzs6mzuwopt.jpg"
 
 # attraction images
 url7 = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Checkpoint_Charlie_1961-10-27.jpg/290px-Checkpoint_Charlie_1961-10-27.jpg"
 
 # user and guide images
-url_ferdi = "http://res.cloudinary.com/dgccrihdr/image/upload/v1528199966/28942904_10156035825481702_1708255590_o.jpg"
-url_ylito = "http://res.cloudinary.com/dgccrihdr/image/upload/v1528199944/255926_10150187295392984_8256731_o.jpg"
-url_tony = "http://res.cloudinary.com/dgccrihdr/image/upload/v1528199937/hhiiiockgsi2hl04lt4u_1.jpg"
-url_dome = "http://res.cloudinary.com/dgccrihdr/image/upload/v1528204124/17522792_1329289437113836_606457125750450379_n.jpg"
+url_ferdi = "https://res.cloudinary.com/dgccrihdr/image/upload/v1528199966/28942904_10156035825481702_1708255590_o.jpg"
+url_ylito = "https://res.cloudinary.com/dgccrihdr/image/upload/v1528199944/255926_10150187295392984_8256731_o.jpg"
+url_tony = "https://res.cloudinary.com/dgccrihdr/image/upload/v1528199937/hhiiiockgsi2hl04lt4u_1.jpg"
+url_dome = "https://res.cloudinary.com/dgccrihdr/image/upload/v1528204124/17522792_1329289437113836_606457125750450379_n.jpg"
 
 # users
 
