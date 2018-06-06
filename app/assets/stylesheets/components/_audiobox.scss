@@ -1,17 +1,19 @@
 .audio-box{
   border-radius: 5px;
   padding: 40px;
-  height: 100vh;
+  height: 70vh;
   background: linear-gradient(to bottom, #4AC29A, #BDFFF3);
 }
 
 #audio-picture {
   height: 200px;
   margin-bottom: 22px;
+  box-shadow: 10px 5px 5px gray;
 }
 .controls {
   justify-content: center;
   display: flex;
+  margin: 30px;
 }
 
 .fas {
@@ -43,5 +45,14 @@
   left: 0;
   width: 0%;
   height: 5px;
-  background-color: red;
+  background-color: #374955;
+}
+
+.audio-information {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  color: white;
+  color: white;
+  font-size: 20px;
 }

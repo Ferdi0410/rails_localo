@@ -1,5 +1,6 @@
 class ToursController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  layout :resolve_layout
   def index
     # @tours = Tour.where(city: @city)
     # @tours = Tour.all
@@ -65,6 +66,16 @@ class ToursController < ApplicationController
     redirect_to pages_profile_path
   end
 end
+
+private
+ def resolve_layout
+   case action_name
+     when "play"
+      "play"
+     else
+      "application"
+   end
+ end
 
 
 
