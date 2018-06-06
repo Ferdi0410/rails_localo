@@ -26,8 +26,11 @@ url4 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527769344/axqjm7jleic
 url5 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527862571/2405727112_4dbb70954a_b.jpg"
 url6 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527862790/shoreditch-london-guide.jpg"
 url_lito = "http://res.cloudinary.com/dgccrihdr/image/upload/v1527186297/zlkezooorwzs6mzuwopt.jpg"
+# attraction url
+url7 = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Checkpoint_Charlie_1961-10-27.jpg/290px-Checkpoint_Charlie_1961-10-27.jpg"
 
-g1 = Guide.new(name:"Lito",description:"I am a tour provider for localo")
+
+g1 = Guide.new(name:"Lito", description:"I am a tour provider for localo")
 g1.remote_photo_url = url_lito
 g1.save
 
@@ -72,7 +75,9 @@ a2 = Attraction.new({title:"Brandenburg gate", address: "Pariser Platz, 10117 Be
 a2.save
 
 a3 = Attraction.new({title:"Checkpoint charlie", address: "Friedrichstraße 43-45, 10117 Berlin", description: "Checkpoint Charlie description", duration: 35})
+a3.remote_photo_url = url7
 a3.save
+
 t6 = Tour.new(
   {title:"Shoreditch", duration: 120, description:"Dive in the most urban part of London. Crab a beer and discover the Home District of James - an Institution in Shoreditch", category:"urban", city:"London"}
   )
