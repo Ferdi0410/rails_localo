@@ -54,11 +54,11 @@ g3 = Guide.new(name:"Young Lito",description:"Brings you to the nicest corners o
 g3.remote_photo_url = url_ylito
 g3.save
 
-g4 = Guide.new(name:"Tony Maguire",description:"Gets you higher than Spiderman")
+g4 = Guide.new(name:"Tony",description:"Gets you higher than Spiderman")
 g4.remote_photo_url = url_tony
 g4.save
 
-g5 = Guide.new(name:"Dome the Ghost",description:"Super Hipster with excessive lifestyle shows you every corner of Berghain and co.")
+g5 = Guide.new(name:"Dome",description:"Super Hipster with excessive lifestyle shows you every corner of Berghain and co.")
 g5.remote_photo_url = url_dome
 g5.save
 
