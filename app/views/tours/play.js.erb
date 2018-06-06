@@ -3,6 +3,7 @@
   // document.querySelector('#audio-file').src = 'http://res.cloudinary.com/dgccrihdr/video/upload/pISg0HkQq9Dz.128.mp3';
   document.getElementById('audio-file').setAttribute('value', "http://res.cloudinary.com/dgccrihdr/video/upload/pISg0HkQq9Dz.128.mp3");
   document.getElementById('audio-picture').setAttribute('style', "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @attraction.photo, crop: :fill %>');");
+  document.getElementById('title').innerText = '<%= @attraction.title %>'
   var evt = document.createEvent("HTMLEvents");
   evt.initEvent("change", false, true);
   document.getElementById('audio-file').dispatchEvent(evt);

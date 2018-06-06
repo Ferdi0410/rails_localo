@@ -18,6 +18,7 @@
 
 .fas {
   font-size: 30px;
+  color:white !important;
 }
 
 .fa-play, .fa-pause {
@@ -55,4 +56,12 @@
   color: white;
   color: white;
   font-size: 20px;
+}
+
+.audio-header {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  margin-top: -30px;
+  margin-bottom: 20px;
 }
