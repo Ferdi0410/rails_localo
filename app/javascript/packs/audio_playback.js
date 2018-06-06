@@ -15,15 +15,17 @@ function fetchCurrentLocation() {
 
   if ("geolocation" in navigator) {
     navigator.geolocation.getCurrentPosition(
-     function success(position) {
-       // for when getting location is a success
-       latitude = position.coords.latitude;
-       longitude = position.coords.longitude;
+      function success(position) {
+        // for when getting location is a success
+        latitude = position.coords.latitude;
+        longitude = position.coords.longitude;
 
-       $.ajax({
-        url: window.location.pathname + '.js?latitude=' + latitude + '&longitude=' + longitude,
-        method: 'get',
-       })
+        if (window.location.pathname.includes("tours")) {
+          $.ajax({
+            url: window.location.pathname + '.js?latitude=' + latitude + '&longitude=' + longitude,
+            method: 'get'
+          })
+        }
      },
     function error(error_message) {
       console.error('An error has occured while retrieving location', error_message);
