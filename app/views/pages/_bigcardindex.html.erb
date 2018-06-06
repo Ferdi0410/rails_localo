@@ -1,17 +1,21 @@
 <div class="bigcardindex">
   <div class="col-xs-12">
-
+ <div class="border-index"></div>
    <div class="titel-index">
+    <p>
     <%= link_to tour.title, tour_path(tour) %>
+     </p>
    </div>
     <%= link_to tour_path(tour) do %>
+
   <div class="big-card-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path tour.photo, crop: :fill %>');">
 </div>
   <%end %>
   <div class="description-index">
+    <p>
  <%= link_to tour.description, tour_path(tour) %>
+ <p>
  </div>
- <div class="border-index"></div>
 </div>
 </div>
 

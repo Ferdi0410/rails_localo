@@ -65,6 +65,16 @@ class ToursController < ApplicationController
     user_tour.destroy
     redirect_to pages_profile_path
   end
+
+  private
+  def resolve_layout
+    case action_name
+      when "play"
+       "play"
+      else
+       "application"
+    end
+  end
 end
 
 private

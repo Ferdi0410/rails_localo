@@ -1,5 +1,8 @@
 
-<%= render 'shared/searchbar' %>
+<div class="searchbar-container">
+  <%= render 'shared/searchbar' %>
+</div>
+
 <div class="category-form">
   <%= link_to 'Art', tours_path(category: "art", query: params[:query] ), class: "category-link #{'category-link-active' if params[:category] == 'art'}",  query: params[:query] %>
 
