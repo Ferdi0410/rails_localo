@@ -11,6 +11,8 @@ let longitude;
 function fetchCurrentLocation() {
   // return a object with lat and lng
   // check if geolocation is supported/enabled on current browser
+  // console.log('CALLING GEO FUNCTION');
+
   if ("geolocation" in navigator) {
     navigator.geolocation.getCurrentPosition(
      function success(position) {

@@ -1,14 +1,26 @@
-<div class="headline-play">
+<!-- <div class="headline-play">
 <h2><%= @tour.title%></h2>
-</div>
+</div> -->
+<%#= #link_to "back", tour_path(@tour), class: "category-link #{'category-link'}" %>
+<%= link_to "back", tour_path(@tour), class: "category-link #{'category-link'}" %>
 <div class="audio-box">
+    <div id="audio-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('');">
+    </div>
   <input id="audio-file" value="" class="hidden"></input>
-  <div id="siriwave"></div>
+  <div class="progression">
+    <div id="audio-bar"></div>
+    <div id="audio-progress"></div>
+  </div>
+  <div class="audio-information">
+    <div id="audio-timer">0:00</div>
+    <div id="audio-duration">0:00</div>
+  </div>
   <div class="controls">
     <button id="play"><i class="fas fa-play"></i> </button>
     <button id="pause"><i class="fas fa-pause"></i></button>
   </div>
-<%= link_to "back", tour_path(@tour), class: "category-link #{'category-link'}" %>
+</div>
+
 
 <div
   id="map"

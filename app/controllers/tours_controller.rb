@@ -1,5 +1,6 @@
 class ToursController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  layout :resolve_layout
   def index
     # @tours = Tour.where(city: @city)
     # @tours = Tour.all
@@ -38,11 +39,6 @@ class ToursController < ApplicationController
     @tour = Tour.find(params[:id])
     @attraction = Attraction.near([params[:latitude], params[:longitude]], 1, order: "distance").first
     # @attraction = Attraction.for_lat_lng(params[:latitude], params[:longitude])
-    respond_to do |format|
-      format.html
-      format.js # views/tours/play.js.erb
-    end
-
     @markers = @tour.attractions.map do |attraction|
       next if attraction.latitude.nil? || attraction.longitude.nil?
       {
@@ -51,6 +47,11 @@ class ToursController < ApplicationController
       }
     end
     @markers = @markers.compact
+
+    respond_to do |format|
+      format.html
+      format.js # views/tours/play.js.erb
+    end
   end
 
   def guide
@@ -65,6 +66,16 @@ class ToursController < ApplicationController
     redirect_to pages_profile_path
   end
 end
+
+private
+ def resolve_layout
+   case action_name
+     when "play"
+      "play"
+     else
+      "application"
+   end
+ end
 
 
 
