@@ -4,6 +4,8 @@
 <div class="category-form-show">
   <% if user_signed_in? && (current_user.user_tours.where(tour_id:@tour.id).count == 0)%>
     <%= link_to 'Start Tour', start_tour_tour_path(@tour), method: :post, class: "category-link #{'category-link-active'}" %>
+  <% elsif !user_signed_in? %>
+    <%= link_to 'Start Tour', start_tour_tour_path(@tour), method: :post, class: "category-link #{'category-link-active'}" %>
   <% else %>
     <%= link_to 'Resume Tour', play_tour_path(@tour), class: "category-link #{'category-link-active'}" %>
   <% end %>
