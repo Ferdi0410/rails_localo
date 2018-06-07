@@ -23,8 +23,7 @@ function initHowl() {
         requestAnimationFrame(step);
       },
       onend: function() {
-        alert('SOUND IS OVER');
-      }
+        window.location.replace(window.location.pathname.replace('/play', ''))
     });
     sound.play();
   }
