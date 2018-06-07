@@ -1,4 +1,5 @@
 // Lancer le player avec @attraction OU afficher un message d'erreur
+let direction = "down";
 <% if @attraction.present? %>
   // document.querySelector('#audio-file').src = 'http://res.cloudinary.com/dgccrihdr/video/upload/pISg0HkQq9Dz.128.mp3';
   document.getElementById('audio-file').setAttribute('value', "https://res.cloudinary.com/dgccrihdr/video/upload/v1527775687/pISg0HkQq9Dz.128.webm");
@@ -7,5 +8,22 @@
   var evt = document.createEvent("HTMLEvents");
   evt.initEvent("change", false, true);
   document.getElementById('audio-file').dispatchEvent(evt);
+
+// map toggler
+  document.getElementById('map-scroll').addEventListener("click", (event) => {
+    if (direction === "down"){
+      document.getElementById('map').scrollIntoView();
+      document.getElementById('arrow').classList.remove("fa-arrow-down");
+      document.getElementById('arrow').classList.add("fa-arrow-up");
+      direction = "up";
+    } else {
+      document.getElementById('audio').scrollIntoView();
+      document.getElementById('arrow').classList.remove("fa-arrow-up");
+      document.getElementById('arrow').classList.add("fa-arrow-down");
+      direction = "down";
+    }
+
+  });
+
 <% end %>
 
