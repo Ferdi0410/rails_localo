@@ -11,7 +11,7 @@ function buildMap() {
    const map = new GMaps({ el: '#map', lat: 0, lng: 0 });
    const markers = JSON.parse(mapElement.dataset.markers);
    const markerPath = mapElement.dataset.markerPath;
-   const start = trackMe(map, markerPath);
+   trackMe(map, markerPath);
 
    map.addMarkers(markers);
 
