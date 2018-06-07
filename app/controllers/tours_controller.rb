@@ -43,7 +43,8 @@ class ToursController < ApplicationController
       next if attraction.latitude.nil? || attraction.longitude.nil?
       {
         lat: attraction.latitude,
-        lng: attraction.longitude
+        lng: attraction.longitude,
+        icon: ActionController::Base.helpers.asset_path('attraction.png')
       }
     end
     @markers = @markers.compact
