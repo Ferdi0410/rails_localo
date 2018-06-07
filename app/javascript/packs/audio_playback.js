@@ -23,7 +23,8 @@ function fetchCurrentLocation() {
         if (window.location.pathname.includes("tours")) {
           $.ajax({
             // url: window.location.pathname + '.js?latitude=52.5368432' + '&longitude=13.392736',
-            url: window.location.pathname + '.js?latitude=' + latitude + '&longitude=' + longitude,
+            //url: window.location.pathname + '.js?latitude=' + latitude + '&longitude=' + longitude,
+            url: window.location.pathname + '.js?latitude=' + '52.5368432' + '&longitude=' + '13.392736',
             method: 'get'
           })
         }
