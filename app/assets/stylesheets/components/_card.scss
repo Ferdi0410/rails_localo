@@ -18,7 +18,7 @@
     font-size: 35px;
     text-shadow: 0 1px 3px rgba(0,0,0,0.6);
     font-family: Roboto;
-    line-height: 27px;
+    line-height: 30px;
 
   }
 
@@ -199,25 +199,30 @@
 .card .card-city2 {
   color: white;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 104px;
+  font-weight: 100;
+  left: 11px;
+  font-size: 13px;
+  text-transform: uppercase;
   margin-right: 5px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  letter-spacing: 1px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  letter-spacing: 2px;
   font-family: Roboto;
 }
 
 .card .card-title2 {
   color: white;
-    margin-left: px;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
-    text-align: center;
-    padding-top: 45px;
-    font-size: 32px;
-    letter-spacing: 2px;
-    font-weight: 500;
-    line-height: 27px;
-    font-family: Roboto;
+  margin-left: px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  padding-top: 66px;
+  font-size: 23px;
+  text-align: left;
+  margin-left: 7px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  line-height: 27px;
+  font-family: Roboto;
 }
 
 .bigcardindex .description-index {
@@ -257,7 +262,7 @@
     text-shadow: 0 2px 13px rgba(53, 53, 53, 0.6);
     /* text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white; */
     font-family: Roboto;
-    line-height: -43px;
+
     h1 {
 
     }
