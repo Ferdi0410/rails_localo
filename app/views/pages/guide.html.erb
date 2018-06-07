@@ -1,19 +1,37 @@
-<div class="container">
+  <div class="container">
+<div class="container-guide">
   <div class="bio">
     <div class="guide-avatar">
       <%= cl_image_tag @guide.photo, width: 80, height: 80, crop: :thumb, gravity: :face, secure: true, class: "avatar-bordered-large" %>
     </div>
     <div class="guide-name">
-      <h4>Hey, I'm <%= @guide.name %> !</h4>
+      <h4>Hey, I'm <%= @guide.name %></h4>
+
+  <div class="symbols-guide">
+    <div class="user-since">
+      <i class="far fa-user"></i>
+        <p>Guide since <%=@guide.created_at.strftime("%Y") %></p>
+    </div>
+    <div class="user-walk">
+      <i class="fas fa-map-marker-alt"></i>
+      <p><%=@guide.tours.count%> Tours in Berlin</p>
     </div>
   </div>
-
+  </div>
+   </div>
+<div class="border-index"></div>
   <div class="guide-description">
+    <div class="sublines-personal">
+    <p>Personal Description</p>
+  </div>
     <%= @guide.description %>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam aperiam commodi assumenda, consequatur facere. Quia ex esse excepturi officiis aliquam molestiae quasi, ut omnis nesciunt, recusandae porro impedit nulla iure.</p>
   </div>
+  <div class="border-index"></div>
+</div>
 
-  <div class="sublines">
+
+  <div class="sublines-guide">
     <p>Tours I'm currently invovled in:</p>
     <div class="flickity-carousel" id="myCarousel" data-ride="carousel" data-flickity='{ "cellAlign": "left", "freeScroll": true, "pageDots": false, "prevNextButtons": false}'>
       <% @guide.tours.each do |tour| %>
@@ -21,8 +39,10 @@
       <% end %>
     </div>
   </div>
-
+  <div class="border-index"></div>
+<div class="guide-btn">
   <div class="back-btn">
-    <%= link_to 'Back', root_path, class: "category-link #{'category-link-active'} back-btn" %>
+    <%= link_to 'Back', root_path, class: "category-link #{'category'} back-btn" %>
   </div>
+</div>
 </div>
