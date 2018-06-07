@@ -10,16 +10,16 @@ let direction = "down";
   document.getElementById('audio-file').dispatchEvent(evt);
 
 // map toggler
-  document.getElementById('map-scroll').addEventListener("click", (event) => {
+  document.getElementById('arrow').addEventListener("click", (event) => {
     if (direction === "down"){
       document.getElementById('map').scrollIntoView();
-      document.getElementById('arrow').classList.remove("fa-arrow-down");
-      document.getElementById('arrow').classList.add("fa-arrow-up");
+      document.getElementById('arrow').classList.remove("fa-chevron-down");
+      document.getElementById('arrow').classList.add("fa-chevron-up");
       direction = "up";
     } else {
       document.getElementById('audio').scrollIntoView();
-      document.getElementById('arrow').classList.remove("fa-arrow-up");
-      document.getElementById('arrow').classList.add("fa-arrow-down");
+      document.getElementById('arrow').classList.remove("fa-chevron-up");
+      document.getElementById('arrow').classList.add("fa-chevron-down");
       direction = "down";
     }
 
