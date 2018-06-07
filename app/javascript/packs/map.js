@@ -25,7 +25,7 @@ buildMap();
 
 
 function trackMe(map) {
- let userPosition = { lat: 0, lng: 0, icon: new google.maps.MarkerImage('//maps.gstatic.com/mapfiles/mobile/mobileimgs2.png',
+ let userPosition = { lat: 0, lng: 0, icon: new google.maps.MarkerImage('https://maps.gstatic.com/mapfiles/mobile/mobileimgs2.png',
                                                    new google.maps.Size(22,22),
                                                    new google.maps.Point(0,18),
                                                    new google.maps.Point(11,11)),
