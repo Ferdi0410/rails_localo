@@ -37,13 +37,14 @@ class ToursController < ApplicationController
 
   def play
     @tour = Tour.find(params[:id])
-    @attraction = Attraction.near([params[:latitude], params[:longitude]], 1, order: "distance").first
+    @attraction = @tour.attractions.near([params[:latitude], params[:longitude]], 1, order: "distance").first
     # @attraction = Attraction.for_lat_lng(params[:latitude], params[:longitude])
     @markers = @tour.attractions.map do |attraction|
       next if attraction.latitude.nil? || attraction.longitude.nil?
       {
         lat: attraction.latitude,
-        lng: attraction.longitude
+        lng: attraction.longitude,
+        icon: ActionController::Base.helpers.asset_path('attraction.png')
       }
     end
     @markers = @markers.compact

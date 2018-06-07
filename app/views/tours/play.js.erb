@@ -1,11 +1,29 @@
 // Lancer le player avec @attraction OU afficher un message d'erreur
+let direction = "down";
 <% if @attraction.present? %>
   // document.querySelector('#audio-file').src = 'http://res.cloudinary.com/dgccrihdr/video/upload/pISg0HkQq9Dz.128.mp3';
-  document.getElementById('audio-file').setAttribute('value', "http://res.cloudinary.com/dgccrihdr/video/upload/pISg0HkQq9Dz.128.mp3");
-  document.getElementById('audio-picture').setAttribute('style', "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @attraction.photo, crop: :fill %>');");
+  document.getElementById('audio-file').setAttribute('value', "https://res.cloudinary.com/dgccrihdr/video/upload/v1528364169/Bernauer_Strasse_-_07.06.18_11.32.mp3");
+  document.getElementById('audio-picture').setAttribute('style', "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @attraction.photo, crop: :fill, secure: true %>');");
   document.getElementById('title').innerText = '<%= @attraction.title %>'
   var evt = document.createEvent("HTMLEvents");
   evt.initEvent("change", false, true);
   document.getElementById('audio-file').dispatchEvent(evt);
+
+// map toggler
+  document.getElementById('arrow').addEventListener("click", (event) => {
+    if (direction === "down"){
+      document.getElementById('map').scrollIntoView();
+      document.getElementById('arrow').classList.remove("fa-chevron-down");
+      document.getElementById('arrow').classList.add("fa-chevron-up");
+      direction = "up";
+    } else {
+      document.getElementById('audio').scrollIntoView();
+      document.getElementById('arrow').classList.remove("fa-chevron-up");
+      document.getElementById('arrow').classList.add("fa-chevron-down");
+      direction = "down";
+    }
+
+  });
+
 <% end %>
 
