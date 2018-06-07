@@ -93,12 +93,18 @@
     content: "\f04b";
     font-size: 40px;
 }
-
+.fa-play:active {
+    content: "\f04b";
+    font-size: 42px;
+}
 .fa-pause:before {
     content: "\f04c";
     font-size: 40px;
 }
-
+.fa-pause:active {
+    content: "\f04c";
+    font-size: 42px;
+}
 .map-button .fas {
     font-size: 55px;
     color: #dddddda6;
@@ -107,6 +113,13 @@
 .map-button {
       display: flex;
     justify-content: center;
+    &:active {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.1);
+    }
+    &:hover {
+      padding-bottom: 5px;
+    }
 }
 
 #title{
