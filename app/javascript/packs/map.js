@@ -10,7 +10,8 @@ function buildMap() {
   if (mapElement) { // don't try to build a map if there's no div#map to inject in
    const map = new GMaps({ el: '#map', lat: 0, lng: 0 });
    const markers = JSON.parse(mapElement.dataset.markers);
-   const start = trackMe(map);
+   const markerPath = mapElement.dataset.markerPath;
+   const start = trackMe(map, markerPath);
 
    map.addMarkers(markers);
 
@@ -27,11 +28,11 @@ function buildMap() {
  }
 }
 
-function trackMe(map) {
+function trackMe(map, markerPath) {
   let userPosition = {
     lat: 0,
     lng: 0,
-    icon: new google.maps.MarkerImage('/assets/user_blue.png', new google.maps.Size(40,40)),
+    icon: new google.maps.MarkerImage(markerPath, new google.maps.Size(40,40)),
   }
  if (navigator.geolocation) {
    // this.isTracking = true;
