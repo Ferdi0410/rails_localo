@@ -1,6 +1,10 @@
 // Lancer le player avec @attraction OU afficher un message d'erreur
 let direction = "down";
 <% if @attraction.present? %>
+  // find the step
+  <% tour_attraction = @tour.tour_attractions.find_by(attraction_id:@attraction.id) %>
+  <% user_tour = current_user.user_tours.find_by(tour_id:@tour.id)%>
+  <% step = Step.find_by(user_tour_id: user_tour.id, tour_attraction_id: tour_attraction.id) %>
   // document.querySelector('#audio-file').src = 'http://res.cloudinary.com/dgccrihdr/video/upload/pISg0HkQq9Dz.128.mp3';
   document.getElementById('audio-file').setAttribute('value', "https://res.cloudinary.com/dgccrihdr/video/upload/v1528364169/Bernauer_Strasse_-_07.06.18_11.32.mp3");
   document.getElementById('audio-picture').setAttribute('style', "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @attraction.photo, crop: :fill, secure: true %>');");
@@ -24,6 +28,21 @@ let direction = "down";
     }
 
   });
+
+  <% step.update(completed:"is-completed")%>
+  console.log("<%= step.completed %>")
+  // update status
+  document.getElementById('back-arrow').addEventListener("click", (event) => {
+    Rails.ajax({
+      url: "/set_current_step",
+      type: "POST",
+      data: "step_id=<%= step.id %>"
+      // success: function(data) {
+
+      // }
+    });
+  });
+
 
 <% end %>
 

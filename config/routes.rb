@@ -13,5 +13,6 @@ Rails.application.routes.draw do
 
   get "pages/profile", to: "pages#profile"
   get "guides/:id/", to:"pages#guide", as: 'guide'
+  post "set_current_step", to: "steps#set_current"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

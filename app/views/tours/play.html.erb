@@ -7,7 +7,7 @@
  -->
 <div class="audio-box" id="audio">
   <div class="audio-header">
-    <%= link_to '<i class="fas fa-arrow-left"></i>'.html_safe, tour_path(@tour)%>
+    <button id="back-arrow"><%= link_to '<i class="fas fa-arrow-left"></i>'.html_safe, tour_path(@tour)%></button>
     <button id="slider"><i class="fas fa-sliders-h"></i></button>
   </div>
     <div id="audio-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('');">
@@ -50,14 +50,3 @@
 <%= javascript_pack_tag "init_howler" %>
 
 
-
-<!-- Tour completed: Loop through tour, same as show page to check all the status for all the attractions.
-Return  -->
-
-<!-- sweet alert when tour is finished -->
-<!-- Attraction given, find step status -->
-
-<!-- tour_attraction = tour.tour_attractions.find_by(attraction_id:attration.id)
-user_tour = current_user.user_tours.find_by(tour_id:tour.id)
-step = step.find_by(user_tour_id: user_tour.id, tour_attraction_id: tour_attraction.id)
-step.update(status:"completed") -->
