@@ -1,19 +1,30 @@
 .bio {
-  margin-top:20px;
   margin-bottom:10px ;
   display:flex;
   justify-content: left;
   margin-left: 5px;
+  margin-top: 6px;
 }
 .guide-name {
   margin-left: 30px;
+  h4 { font-family: Roboto, Helvetica, sans-serif;
+  line-height: 1.5;
+  color: #848282;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 300;
+
+  }
 }
 
 .guide-description {
   text-align: left;
-  margin-left: 5px;
+  margin-left: 0px;
   font-family: Lato;
-
+  color: #5f5b5b;
+  padding-right: 8px;
+  font-size: 15px;
 }
 
 
@@ -21,3 +32,77 @@
   text-align: left;
   margin-top: 20px;
 }
+
+.container-guide {
+  padding-left: 8px;
+  padding-right: 4px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.sublines-personal {
+  margin-left: 0px;
+  margin-top: 20px;
+  font-family: Roboto, Helvetica, sans-serif;
+  line-height: 1.5;
+  color: #848282;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 300;
+ }
+ .fa-map-marker-alt:before {
+  color: #1c6f81;
+  font-size: 16px;
+  }
+
+.fa-user:before {
+  content: "\f007";
+  color: #1c6f81;
+  font-size: 16px;
+}
+.symbols-guide {
+  margin-top: -9px;
+  font-family: Lato, Helvetica, sans-serif;
+  font-size: 14px;
+  margin-top: -2px;
+  font-family: Lato, Helvetica, sans-serif;
+  font-size: 14px;
+  p {
+    margin: 0 0 5.5px;
+  }
+
+}
+.far.fa-user {
+  font-size: 16px;
+}
+.fas.fa-map-marker-alt {
+  font-size: 16px;
+}
+
+.user-since {
+  display: flex;
+
+}
+.user-walk {
+  display: flex;
+
+}
+
+.sublines-guide  {
+  margin-left:  7px;
+  font-family: Roboto, Helvetica, sans-serif;
+  line-height: 1.5;
+  color: #848282;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-top: 21px;
+
+}
+
+.symbols-guide p {
+  margin-left: 5px;
+}
+
