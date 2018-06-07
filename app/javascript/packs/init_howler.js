@@ -23,7 +23,9 @@ function initHowl() {
         requestAnimationFrame(step);
       },
       onend: function() {
-        window.location.replace(window.location.pathname.replace('/play', ''));
+        document.getElementById('map').scrollIntoView();
+        document.getElementById('arrow').classList.remove("fa-chevron-down");
+        document.getElementById('arrow').classList.add("fa-chevron-up");
       }
     });
     sound.play();
