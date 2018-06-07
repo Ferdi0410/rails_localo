@@ -23,7 +23,8 @@ function initHowl() {
         requestAnimationFrame(step);
       },
       onend: function() {
-        window.location.replace(window.location.pathname.replace('/play', ''))
+        window.location.replace(window.location.pathname.replace('/play', ''));
+      }
     });
     sound.play();
   }
