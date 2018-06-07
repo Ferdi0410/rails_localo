@@ -8,6 +8,7 @@
   height: 200px;
   margin-bottom: 22px;
   box-shadow: 4px 3px 15px 1px rgba(0, 0, 0, 0.14);
+  background-size: cover;
 }
 .controls {
   justify-content: center;
@@ -101,8 +102,8 @@
 .map-button .fas {
     font-size: 55px;
     color: #dddddda6;
-    margin-top: 1px;
-}
+    margin-top: 15px;
+  }
 .map-button {
       display: flex;
     justify-content: center;
