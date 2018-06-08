@@ -96,6 +96,11 @@
     font-weight: 500;
     line-height: 27px;
     font-family: Roboto;
+
+    &:focus{
+      outline:0;
+      text-decoration:none
+    }
 }
 
 .card .card-image {
@@ -107,7 +112,6 @@
   border-radius: 3px;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.08), 0 1px 10px 1px rgba(0, 0, 0, 0.05);
   //margin-left: 4px;
-
 }
 .card .card-info {
   position: relative;

@@ -24,6 +24,7 @@ url_lito = "https://res.cloudinary.com/dgccrihdr/image/upload/v1527186297/zlkezo
 # attraction images
 url7 = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Checkpoint_Charlie_1961-10-27.jpg/290px-Checkpoint_Charlie_1961-10-27.jpg"
 url8 = "http://res.cloudinary.com/dgccrihdr/image/upload/v1528367647/Wall-museum-3.jpg"
+
 # user and guide images
 url_ferdi = "https://res.cloudinary.com/dgccrihdr/image/upload/v1528199966/28942904_10156035825481702_1708255590_o.jpg"
 url_ylito = "https://res.cloudinary.com/dgccrihdr/image/upload/v1528199944/255926_10150187295392984_8256731_o.jpg"
