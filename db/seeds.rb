@@ -111,6 +111,7 @@ t6 = Tour.new(
 t6.remote_photo_url = url6
 t6.save
 
+
 # attractions
 a1 = Attraction.new({title:"Reichstag", address: "Platz der Republik 1, 11011 Berlin", description: "Neo-Renaissance parliament building topped by a Norman Foster glass dome with 360-degree city views", duration: 20 })
 a1.save
@@ -151,6 +152,8 @@ t4.guide = g2
 t4.save
 t5.guide = g2
 t5.save
+t6.guide = g2
+t6.save
 
 # build tours with attractions
 # checkpoint charlie
