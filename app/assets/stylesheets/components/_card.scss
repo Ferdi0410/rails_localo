@@ -222,7 +222,7 @@
 
 .card .card-title2 {
   color: white;
-  margin-left: px;
+  // margin-left: px;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
   text-align: center;
   padding-top: 66px;
@@ -236,11 +236,17 @@
 }
 
 .bigcardindex .description-index {
-  font-size: 12px;
+  font-size: 16px;
   font-color: #D9D945;
   margin-right: 15px;
   font-family: Lato;
   text-align: left;
+
+  a:focus {
+    text-decoration: none;
+    outline: 0;
+    opacity: 0.3;
+  }
 }
 
 .profile-page h3 {
