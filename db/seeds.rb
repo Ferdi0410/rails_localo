@@ -89,7 +89,7 @@ t4.remote_photo_url = url4
 t4.save
 
 t5 = Tour.new(
-  {title:"Viktualien Markt", duration: 110, description:"Discover one of the most famous food markets in the world.", category:"urban", city:"Munich"}
+  {title:"Viktualienmarkt", duration: 110, description:"Discover one of the most famous food markets in the world.", category:"urban", city:"Munich"}
   )
 t5.remote_photo_url = url5
 t5.save
