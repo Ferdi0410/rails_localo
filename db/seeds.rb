@@ -42,30 +42,40 @@ u2.save
 
 # guides
 
-g1 = Guide.new(name:"Lito", description:"I am a tour provider for localo")
+g1 = Guide.new(name:"Lito", description:"I’m a journalist, GDR expert and author of a book about architecture and lifestyle within the German Democratic Republic. It’s a fascinating period and there’s nowhere better to explore it than Berlin. Since the fall of the Wall, it’s getting more difficult to see the places that document this important time - but I can guide you and tell all you need to know, including about the Stasi...")
 g1.remote_photo_url = url_lito
 g1.save
 
-g2 = Guide.new(name:"Ferdi", description:"El Chefe brings you to X-Berg and Neukölln")
+g2 = Guide.new(name:"Ferdi", description:"As a Münchner Kindl Ferdinand is not born and raised in Berlin - BUT he is really into German history, especially in the time of 20th century. Living in Berlin for over 15 Years, he can give you a short anecdote for every stone lying around. Ferdinand's tours give you insights in over 150 years of Berlin history combined with cool alongeside stories.")
 g2.remote_photo_url = url_ferdi
 g2.save
 
-g3 = Guide.new(name:"Young Lito", description:"Brings you to the nicest corners of Brussels")
+g3 = Guide.new(name:"Young Lito", description:"I´m an artist and cultural manager living in Berlin since 2010.
+I love exploring this beautiful city and to show it to friends visiting me.
+
+As I am practicing Graffiti since almost 10 years I´m a Street Art passionate who started to work as a tourist guide to show people the amazing artworks you can find in this open air museum.
+I´m also into authentic food and I love nightlife, so I can show you my favorite spots for eating and party!
+
+Let´s do a walk together and have some fun...")
 g3.remote_photo_url = url_ylito
 g3.save
 
-g4 = Guide.new(name:"Tony", description:"Gets you higher than Spiderman")
+g4 = Guide.new(name:"Tony", description:"Born and raised in a squat in Kreuzberg, I’ve lived in Berlin my whole life and alternative-Berlin is my home.
+
+A former history student, I’m also a musician and fan of Berlin’s world-famous electronic music scene. I know all the good nightclubs - just ask for tips!
+
+It’s always a pleasure for me to share Berlin’s magic with people, and I look forward to meeting you.")
 g4.remote_photo_url = url_tony
 g4.save
 
-g5 = Guide.new(name:"Dome", description:"Super Hipster with excessive lifestyle shows you every corner of Berghain and co.")
+g5 = Guide.new(name:"Dome", description:"Super Hipster with excessive lifestyle shows you every corner of Berghain and co. I am originally from Düsseldorf and have been based in Berlin since 2008. I like to discover stories and share them with people. Our stroll will make you want to explore more and more of this multifaceted, frenzied, and incredible nightlife of Berlin. ")
 g5.remote_photo_url = url_dome
 g5.save
 
 
 # Tours
 t1 = Tour.new(
-  {title:"Checkpoint Charlie", duration: 60, description:"A Cold War spy shares his story of the fascinating and terrifying battle of ideologies that once divided the world.", category:"history", city:"Berlin"}
+  {title:"Checkpoint Charlie Tour", duration: 60, description:"A Cold War spy shares his story of the fascinating and terrifying battle of ideologies that once divided the world.", category:"history", city:"Berlin"}
   )
 t1.remote_photo_url = url1
 t1.save
@@ -83,19 +93,19 @@ t3.remote_photo_url = url3
 t3.save
 
 t4 = Tour.new(
-  {title:"Kollwitzer Kiez", duration: 110, description:"Discover one of the most iconic neighboorhoods in the Berlin.", category:"urban", city:"Berlin"}
+  {title:"Kollwitzer Kiez Tour", duration: 110, description:"Discover one of the most iconic neighboorhoods in the Berlin.", category:"urban", city:"Berlin"}
   )
 t4.remote_photo_url = url4
 t4.save
 
 t5 = Tour.new(
-  {title:"Viktualien Markt", duration: 110, description:"Discover one of the most famous food markets in the world.", category:"urban", city:"Munich"}
+  {title:"Viktualien Market Food Tour", duration: 110, description:"Discover one of the most famous food markets in the world.", category:"urban", city:"Munich"}
   )
 t5.remote_photo_url = url5
 t5.save
 
 t6 = Tour.new(
-  {title:"Shoreditch", duration: 120, description:"Dive in the most urban part of London. Crab a beer and discover the Home District of James - an Institution in Shoreditch", category:"urban", city:"London"}
+  {title:"Shoreditch Graffiti Tour", duration: 120, description:"Dive in the most urban part of London. Crab a beer and discover the Home District of James - an Institution in Shoreditch", category:"urban", city:"London"}
   )
 t6.remote_photo_url = url6
 t6.save
