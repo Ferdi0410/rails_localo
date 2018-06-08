@@ -152,7 +152,7 @@ t4.guide = g2
 t4.save
 t5.guide = g2
 t5.save
-t6.guide = g2
+t6.guide = g5
 t6.save
 
 # build tours with attractions
