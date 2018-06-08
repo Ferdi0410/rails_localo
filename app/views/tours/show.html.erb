@@ -12,37 +12,42 @@
   <%= link_to 'Go Back', tours_path(@tour), class: "category-link #{'category-link'}" %>
 </div>
 <!-- saved timeline -->
-<% if user_signed_in? && (current_user.user_tours.where(tour_id:@tour.id).count != 0)%>
-  <article class="page">
-    <ul class="timeline">
-      <% @tour.tour_attractions.each_with_index do |tour_attraction, index| %>
-        <li class="timeline-milestone <%= current_user.steps.find_by(tour_attraction_id: tour_attraction.id).completed  %>">
-          <div class="timeline-action is-expandable expanded">
-            <h2 class="title"><%= tour_attraction.attraction.title %></h2>
-            <div class="content">
-              <p><%= tour_attraction.attraction.description %></p>
+<% if @tour.attractions.count != 0 %>
+  <% if user_signed_in? && (current_user.user_tours.where(tour_id:@tour.id).count != 0)%>
+    <article class="page">
+      <ul class="timeline">
+        <% @tour.tour_attractions.each_with_index do |tour_attraction, index| %>
+          <li class="timeline-milestone <%= current_user.steps.find_by(tour_attraction_id: tour_attraction.id).completed  %>">
+            <div class="timeline-action is-expandable expanded">
+              <h2 class="title"><%= tour_attraction.attraction.title %></h2>
+              <div class="content">
+                <p><%= tour_attraction.attraction.description %></p>
+              </div>
             </div>
-          </div>
-        </li>
-      <% end %>
-    </ul>
-  </article>
-<!-- not logged in -->
+          </li>
+        <% end %>
+      </ul>
+    </article>
+  <!-- not logged in -->
+  <% else %>
+    <article class="page">
+      <ul class="timeline">
+        <% @tour.tour_attractions.each_with_index do |tour_attraction, index| %>
+          <li class="timeline-milestone is-future">
+            <div class="timeline-action is-expandable expanded">
+              <h2 class="title"><%= tour_attraction.attraction.title %></h2>
+              <div class="content">
+                <p><%= tour_attraction.attraction.description %></p>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </article>
+  <% end %>
+
 <% else %>
-  <article class="page">
-    <ul class="timeline">
-      <% @tour.tour_attractions.each_with_index do |tour_attraction, index| %>
-        <li class="timeline-milestone is-future">
-          <div class="timeline-action is-expandable expanded">
-            <h2 class="title"><%= tour_attraction.attraction.title %></h2>
-            <div class="content">
-              <p><%= tour_attraction.attraction.description %></p>
-            </div>
-          </div>
-        </li>
-      <% end %>
-    </ul>
-  </article>
+  <div class="show-page-extra-space"></div>
 <% end %>
 
 <%= javascript_pack_tag 'timeline' %>
