@@ -5,10 +5,10 @@
 <div id="homePageCarousel" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="item active">
-      <%= render 'bannercard' %>
+      <%= render 'pages/homecard', tour:@tours[0] %>
     </div>
-    <% @tours.each do |tour| %>
-      <div class="item">
+    <% @tours[1..-1].each do |tour| %>
+      <div class="item ">
         <%= render 'pages/homecard', tour:tour %>
       </div>
     <% end %>
